@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bvsSKs4SM+ZWG9C/7tVd9/Ze81Z57LdNvFXXDL1OMtMTgSVL0G1A6DtL52yAKm4A/wUlQYv2Zem7t4CtXldT3Q==",
+  "dgSpecHash": "/WhWR3vE8MlqM9YPrxiUirBWSk5p+MaKC3XDXRUZlcXsEZntAgQl/0cN6TAcyc+OJwzA8Rip61TECugvN5e2Lw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\sette\\Desktop\\Webshoppen2\\Webbshoppen\\WebbshoppenAPI\\WebbshoppenAPI\\WebbshoppenAPI.csproj",
+  "projectFilePath": "C:\\Users\\sette\\Desktop\\Webbshoppen\\Webbshoppen\\WebbshoppenAPI\\WebbshoppenAPI\\WebbshoppenAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sette\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\sette\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
