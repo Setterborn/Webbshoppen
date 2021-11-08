@@ -1,10 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\WebbshoppenAPI",
-    "\\WebbshoppenAPI\\WebbshoppenAPI\\Controllers",
-    "\\WebbshoppenAPI\\WebbshoppenAPI\\Models"
+    "\\Webbshoppen",
+    "\\WebbshoppenAPI"
   ],
-  "SelectedNode": "\\WebbshoppenAPI\\WebbshoppenAPI.sln",
+  "SelectedNode": "\\Webbshoppen\\Webbshoppen.sln",
   "PreviewInSolutionExplorer": false
 }
