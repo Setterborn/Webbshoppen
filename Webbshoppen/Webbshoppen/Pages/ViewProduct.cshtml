@@ -1,0 +1,10 @@
+﻿@page
+@model ViewProductModel
+@{
+}
+<div class="text-center">
+    @foreach (var prod in Model.Productlist)
+    {
+        <p>@prod.Name</p>
+    }
+</div>
