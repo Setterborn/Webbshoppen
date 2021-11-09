@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = WebbshoppenAPI
-build_property.ProjectDir = C:\Users\sette\Source\Repos\Setterborn\Webbshoppen\WebbshoppenAPI\WebbshoppenAPI\
+build_property.ProjectDir = C:\Users\sette\source\repos\Setterborn\Webbshoppen\WebbshoppenAPI\WebbshoppenAPI\
