@@ -10,6 +10,7 @@ namespace WebbshoppenAPI.Data
     {
         public List<Product> ProductList { get; set; }
 
+
         public static List<Product> GetProducts()
         {
             List<Product> Products = new();

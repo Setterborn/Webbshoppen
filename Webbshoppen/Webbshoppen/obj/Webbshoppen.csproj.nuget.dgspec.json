@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sette\\Source\\Repos\\Setterborn\\Webbshoppen\\Webbshoppen\\Webbshoppen\\Webbshoppen.csproj": {}
+    "C:\\Users\\sette\\source\\repos\\Setterborn\\Webbshoppen\\Webbshoppen\\Webbshoppen\\Webbshoppen.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sette\\Source\\Repos\\Setterborn\\Webbshoppen\\Webbshoppen\\Webbshoppen\\Webbshoppen.csproj": {
+    "C:\\Users\\sette\\source\\repos\\Setterborn\\Webbshoppen\\Webbshoppen\\Webbshoppen\\Webbshoppen.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sette\\Source\\Repos\\Setterborn\\Webbshoppen\\Webbshoppen\\Webbshoppen\\Webbshoppen.csproj",
+        "projectUniqueName": "C:\\Users\\sette\\source\\repos\\Setterborn\\Webbshoppen\\Webbshoppen\\Webbshoppen\\Webbshoppen.csproj",
         "projectName": "Webbshoppen",
-        "projectPath": "C:\\Users\\sette\\Source\\Repos\\Setterborn\\Webbshoppen\\Webbshoppen\\Webbshoppen\\Webbshoppen.csproj",
+        "projectPath": "C:\\Users\\sette\\source\\repos\\Setterborn\\Webbshoppen\\Webbshoppen\\Webbshoppen\\Webbshoppen.csproj",
         "packagesPath": "C:\\Users\\sette\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sette\\Source\\Repos\\Setterborn\\Webbshoppen\\Webbshoppen\\Webbshoppen\\obj\\",
+        "outputPath": "C:\\Users\\sette\\source\\repos\\Setterborn\\Webbshoppen\\Webbshoppen\\Webbshoppen\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\sette\\AppData\\Roaming\\NuGet\\NuGet.Config",

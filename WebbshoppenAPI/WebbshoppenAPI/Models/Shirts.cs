@@ -22,6 +22,5 @@ namespace WebbshoppenAPI.Models
             Stock = stock;
             ImageLink = imageLink;
         }
-        
     }
 }
