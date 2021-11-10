@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Webbshoppen",
+    "\\Webbshoppen\\Webbshoppen",
+    "\\Webbshoppen\\Webbshoppen\\Pages"
   ],
-  "SelectedNode": "\\Webbshoppen.sln",
+  "SelectedNode": "\\Webbshoppen\\Webbshoppen.sln",
   "PreviewInSolutionExplorer": false
 }

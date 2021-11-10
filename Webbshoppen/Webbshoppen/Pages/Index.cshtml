@@ -4,7 +4,142 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+ 
+        
+            
+<div class="container">
+    <div class="row " style="padding-bottom:50px">
+       
+
+
+        <h1 class="text-center center "> @Model.ShopName</h1>
+
+
+
+    </div>
+    <div class="row"style="padding-bottom:50px">
+        <form method="post">
+            <input type="text" asp-for="@Model.FindProduct" />
+            <input type="submit"  value="Search" />
+        </form>
+    </div>
+
+    <div class="row" style="padding-bottom:50px">
+        <div class="col">
+            <p><a asp-page="/ViewProduct" asp-route-index="1">All Clothes</a></p>
+            <p><a asp-page="/ViewProduct" asp-route-index="2">Men</a></p>
+            <p><a asp-page="/ViewProduct" asp-route-index="3">Woman</a></p>
+            
+            <p><a asp-page="/ViewProduct" asp-route-index="4">Jackets</a></p>
+            <p><a asp-page="/ViewProduct" asp-route-index="5">Shoes</a></p>
+            <p><a asp-page="/ViewProduct" asp-route-index="6">Shirts</a></p>
+            <p><a asp-page="/ViewProduct" asp-route-index="7">Pants</a></p>
+            <p><a asp-page="/ViewProduct" asp-route-index="8">Underwear</a></p>
+            <p><a asp-page="/ViewProduct" asp-route-index="9">Brands</a></p>
+        </div>
+        <div class="col">
+            <img src="~/Image/clothes-g10faf1e9e_1920.jpg" width="600" height="400" />
+        </div>
+        <div class="col">
+
+            <img src="~/Image/christmas-tree-g47bc817af_1920.jpg" width="300" height="400" />
+        </div>
+
+
+    </div>
+    
+
+    <div class="row" style="padding-bottom:50px">
+        <h6 class="text-center center">Store Background</h6>
+        <p>
+            This shop started 2004 when a group a friends waned to crete an online buisness store together.
+            Our buisness idea is that all clothes should be comfortable to a reasonal price. In this store
+            we sell jackets,shoes ,underwear,shirts and a lot of other items for all accations and seasons.
+        </p>
+    </div>
+    <div class="row"style="padding-bottom:50px">
+        <h1 class="center">Christmas Sale:20% off selected items</h1>
+    </div>
+   
+
+    <div class="row"style="padding-bottom:50px">
+        
+        <div class="col">
+            <div class="card center" style="width: 15rem;padding:10px">
+                <img src="~/Image/man-g6899a8fe4_640.jpg" class="card-img-top" alt="Man in shirt">
+                <div class="card-body">
+                    <h5 class="card-title">Shirts</h5>
+                    <p class="card-text">Now 20% discount on Shirts in the store .Check it out</p>
+                    <a href="#" class="btn btn-primary">Show Shirts</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card center" style="width: 15rem;padding:10px">
+                <img src="~/Image/man-gd8fe6c43d_640.jpg" class="card-img-top" alt="Man in jacket">
+                <div class="card-body">
+                    <h5 class="card-title">Jackets</h5>
+                    <p class="card-text">Now 20% discount on jackets in the store .Check it out!</p>
+                    <a href="#" class="btn btn-primary">Show Jackets</a>
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="col">
+            <div class="card center" style="width: 15rem;padding:10px">
+                <img src="~/Image/fall-gd13682064_640.jpg" class="card-img-top" alt="shoes">
+                <div class="card-body">
+                    <h5 class="card-title">Shoes</h5>
+                    <p class="card-text">Now 20% discount on Shoes in the store .Check it out</p>
+                    <a href="#" class="btn btn-primary">Show Shoes</a>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+        </div>
+
+
+    </div>
+    <div class="row">
+        <div class="col">
+
+            <div class="card center" style="width: 15rem;padding:10px">
+                <img src="~/Image/sock-gb08f91df1_640.jpg" class="card-img-top" alt="Socks">
+                <div class="card-body">
+                    <h5 class="card-title">Socks</h5>
+                    <p class="card-text">Now 20% discount on socks in the store .Check it out</p>
+                    <a href="#" class="btn btn-primary">Show Underwear and Socks</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card center" style="width: 15rem;padding:10px">
+                <img src="~/Image/girl-g72e6d6e63_640.jpg" class="card-img-top" alt="Girl in pants">
+                <div class="card-body">
+                    <h5 class="card-title">Pants</h5>
+                    <p class="card-text">Now 20% discount on different Pants in store.Check it out !</p>
+                    <a href="#" class="btn btn-primary">Show Pants</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card center" style="width: 15rem;padding:10px">
+                <img src="~/Image/underpants-g8e87646b6_640.jpg" class="card-img-top" alt="Underwear">
+                <div class="card-body">
+                    <h5 class="card-title">Underwear</h5>
+                    <p class="card-text">Now 20% discount on Underwear in store .Check it out !</p>
+                    <a href="#" class="btn btn-primary">Show Underwear</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </div>
