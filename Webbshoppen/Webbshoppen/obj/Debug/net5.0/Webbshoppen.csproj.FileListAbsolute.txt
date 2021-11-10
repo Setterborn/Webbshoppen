@@ -38,3 +38,4 @@ C:\Users\Frank\Documents\GitHub\Webbshoppen\Fjäder\Webbshoppen\Webbshoppen\obj\
 C:\Users\Frank\Documents\GitHub\Webbshoppen\Fjäder\Webbshoppen\Webbshoppen\obj\Debug\net5.0\Webbshoppen.pdb
 C:\Users\Frank\Documents\GitHub\Webbshoppen\Fjäder\Webbshoppen\Webbshoppen\obj\Debug\net5.0\Webbshoppen.genruntimeconfig.cache
 C:\Users\Frank\Documents\GitHub\Webbshoppen\Fjäder\Webbshoppen\Webbshoppen\obj\Debug\net5.0\Webbshoppen.csproj.CopyComplete
+C:\Users\Frank\Documents\GitHub\Webbshoppen\Fjäder\Webbshoppen\Webbshoppen\obj\Debug\net5.0\Razor\Pages\ViewProduct.cshtml.g.cs
