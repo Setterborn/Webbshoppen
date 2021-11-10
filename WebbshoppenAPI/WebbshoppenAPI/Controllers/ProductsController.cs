@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using WebbshoppenAPI.Models;
 using WebbshoppenAPI.Data;
+using Newtonsoft.Json;
 
 namespace WebbshoppenAPI.Controllers
 {
@@ -14,9 +15,11 @@ namespace WebbshoppenAPI.Controllers
         public class ProductsController : Controller // ControllerBase
         {
             [HttpGet]
-            public List<Product> GetProducts() // Spelar ingen roll vad den heter
+            public string GetProducts() // Spelar ingen roll vad den heter
             {
-                return ProductManager.GetProducts();
+            JsonSerializerSettings settings = new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.All };
+            string Serialized = JsonConvert.SerializeObject(ProductManager.GetProducts(), settings);
+            return Serialized;
             }
         }
     

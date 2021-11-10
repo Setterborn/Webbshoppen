@@ -8,11 +8,10 @@ namespace WebbshoppenAPI.Models
     public class Shoes : Product
     {
         public int Size { get; set; }
-        public Colors Colors { get; set; }
-        public Gender Gender { get; set; }
 
-        public Shoes(int size, Colors color, Gender gender, string name, double price, string description, int stock, string imageLink)
+        public Shoes(int productId, int size, Colors color, Gender gender, string name, double price, string description, int stock, string imageLink)
         {
+            ProductId = productId;
             Size = size;
             Colors = color;
             Gender = gender;

@@ -11,11 +11,12 @@ namespace Webbshoppen.Pages
 {
     public class ViewProductModel : PageModel
     {
-        public List<Product> Productlist { get; set; }
+        public List<Product> TheProduct { get; set; }
 
-        public void OnGet()
+        public void OnGet(int productId)
         {
-            Productlist = ProductManager.GetProductList();
+            productId = 15;
+            TheProduct = ProductManager.ProductList.Where(p => p.ProductId == productId).ToList();
         }
     }
 }
