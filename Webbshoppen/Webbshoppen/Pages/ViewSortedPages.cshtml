@@ -1,0 +1,43 @@
+﻿@page
+@model Webbshoppen.Pages.ViewSortedPagesModel
+@{
+}
+<div>
+    @foreach (Models.Product prod in Data.ProductManager.SortedList)
+    {
+        <div class="card mx-auto" style="width: 50rem; color: darkslategray;">
+            <img src="@prod.ImageLink." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">@prod.Name</h5>
+                <p class="card-text">@prod.Price Sek</p>
+                <p class="card-text">In stock: @prod.Stock </p>
+                @if (prod is Models.Jackets)
+                {
+                    <p class="card-text">Size: @(((Models.Jackets)prod).Size)</p>
+                    <p class="card-text">Jacket lenght: @(((Models.Jackets)prod).JacketLenght)</p>
+                }
+                @if (prod is Models.Pants)
+                {
+                    <p class="card-text">Size: @(((Models.Pants)prod).Size)</p>
+                }
+                @if (prod is Models.Shirts)
+                {
+                    <p class="card-text">Size: @(((Models.Shirts)prod).Size)</p>
+                }
+                @if (prod is Models.Shoes)
+                {
+                    <p class="card-text">Size: @(((Models.Shoes)prod).Size)</p>
+                }
+                @if (prod is Models.Underwear)
+                {
+                    <p class="card-text">Size: @(((Models.Underwear)prod).Size)</p>
+                    <p class="card-text">Sexy: @(((Models.Underwear)prod).UnderwearSexyness)</p>
+                }
+                <p class="card-text">Gender: @prod.Gender</p>
+                <p class="card-text">Color: @prod.Colors</p>
+                <p>__________________________________________________________________________________________________________________</p>
+                <p class="card-text">@prod.Description</p>
+            </div>
+        </div>
+    }
+</div>
