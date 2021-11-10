@@ -9,11 +9,19 @@
             
 <div class="container">
     <div class="row " style="padding-bottom:50px">
-        
+       
+
 
         <h1 class="text-center center "> @Model.ShopName</h1>
-       
-        
+
+
+
+    </div>
+    <div class="row"style="padding-bottom:50px">
+        <form method="post">
+            <input type="text" asp-for="@Model.FindProduct" />
+            <input type="submit"  value="Search" />
+        </form>
     </div>
 
     <div class="row" style="padding-bottom:50px">
