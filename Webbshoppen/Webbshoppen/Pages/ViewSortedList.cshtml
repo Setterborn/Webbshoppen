@@ -1,0 +1,42 @@
+﻿@page
+@model Webbshoppen.Pages.ViewSortedListModel
+@{
+}
+@foreach (Models.Product prod in Model.SortedList)
+{
+    <div class="card" style="width: 18rem;">
+        <img src="@prod.ImageLink" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">@prod.Name</h5>
+            <p class="card-text">@prod.Price</p>
+            <p class="card-text">Item in stock: @prod.Stock</p>
+            @if (prod is Models.Jackets)
+            {<p class="card-text">Item in stock: @((Models.Jackets)prod).Size</p>
+                <p class="card-text">Item in stock: @((Models.Jackets)prod).Color</p>
+                <p class="card-text">Item in stock: @((Models.Jackets)prod).Gender</p>
+                <p class="card-text">Item in stock: @((Models.Jackets)prod).JacketLenght</p>}
+            @if (prod is Models.Pants)
+            {<p class="card-text">Item in stock: @((Models.Pants)prod).Size</p>
+                <p class="card-text">Item in stock: @((Models.Pants)prod).Color</p>
+                <p class="card-text">Item in stock: @((Models.Pants)prod).Gender</p>}
+            @if (prod is Models.Shirts)
+            {<p class="card-text">Item in stock: @((Models.Shirts)prod).Size</p>
+                <p class="card-text">Item in stock: @((Models.Shirts)prod).Color</p>
+                <p class="card-text">Item in stock: @((Models.Shirts)prod).Gender</p>}
+            @if (prod is Models.Shoes)
+            {<p class="card-text">Item in stock: @((Models.Shoes)prod).Size</p>
+                <p class="card-text">Item in stock: @((Models.Shoes)prod).Color</p>
+                <p class="card-text">Item in stock: @((Models.Shoes)prod).Gender</p>}
+            @if (prod is Models.Underwear)
+            {<p class="card-text">Item in stock: @((Models.Underwear)prod).Size</p>
+                <p class="card-text">Item in stock: @((Models.Underwear)prod).Color</p>
+                <p class="card-text">Item in stock: @((Models.Underwear)prod).Gender</p>
+                <p class="card-text">Item in stock: @((Models.Underwear)prod).UnderwearSexyness</p>}
+            <p class="card-text">@prod.Description</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+}
+{
+
+}
