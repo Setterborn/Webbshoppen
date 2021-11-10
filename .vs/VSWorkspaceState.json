@@ -2,8 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\Webbshoppen",
-    "\\WebbshoppenAPI"
+    "\\Webbshoppen\\Webbshoppen",
+    "\\Webbshoppen\\Webbshoppen\\Pages",
+    "\\Webbshoppen\\Webbshoppen\\Pages\\Shared"
   ],
-  "SelectedNode": "\\Webbshoppen\\Webbshoppen.sln",
+  "SelectedNode": "\\Webbshoppen\\Webbshoppen\\Pages\\Shared\\_Layout.cshtml",
   "PreviewInSolutionExplorer": false
 }
