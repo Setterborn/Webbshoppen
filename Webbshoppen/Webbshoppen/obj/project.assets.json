@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sette\\Desktop\\Setterborn\\Webbshoppen\\Webbshoppen\\Webbshoppen\\Webbshoppen.csproj",
+      "projectUniqueName": "C:\\Users\\sette\\Desktop\\Webbshoppen\\Webbshoppen\\Webbshoppen\\Webbshoppen.csproj",
       "projectName": "Webbshoppen",
-      "projectPath": "C:\\Users\\sette\\Desktop\\Setterborn\\Webbshoppen\\Webbshoppen\\Webbshoppen\\Webbshoppen.csproj",
+      "projectPath": "C:\\Users\\sette\\Desktop\\Webbshoppen\\Webbshoppen\\Webbshoppen\\Webbshoppen.csproj",
       "packagesPath": "C:\\Users\\sette\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sette\\Desktop\\Setterborn\\Webbshoppen\\Webbshoppen\\Webbshoppen\\obj\\",
+      "outputPath": "C:\\Users\\sette\\Desktop\\Webbshoppen\\Webbshoppen\\Webbshoppen\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\sette\\AppData\\Roaming\\NuGet\\NuGet.Config",
