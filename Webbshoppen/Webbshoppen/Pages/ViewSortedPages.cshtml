@@ -1,42 +1,28 @@
 ﻿@page
 @model Webbshoppen.Pages.ViewSortedPagesModel
 @{
+    ViewData["Title"] = "Sorted Page";
 }
 <div>
+    @if (Data.ProductManager.SortedList.Count < 1)
+    {<p>No result</p>}
     @foreach (Models.Product prod in Data.ProductManager.SortedList)
     {
-        <div class="card mx-auto" style="width: 50rem; color: darkslategray;">
-            <img src="@prod.ImageLink." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">@prod.Name</h5>
-                <p class="card-text">@prod.Price Sek</p>
-                <p class="card-text">In stock: @prod.Stock </p>
-                @if (prod is Models.Jackets)
-                {
-                    <p class="card-text">Size: @(((Models.Jackets)prod).Size)</p>
-                    <p class="card-text">Jacket lenght: @(((Models.Jackets)prod).JacketLenght)</p>
-                }
-                @if (prod is Models.Pants)
-                {
-                    <p class="card-text">Size: @(((Models.Pants)prod).Size)</p>
-                }
-                @if (prod is Models.Shirts)
-                {
-                    <p class="card-text">Size: @(((Models.Shirts)prod).Size)</p>
-                }
-                @if (prod is Models.Shoes)
-                {
-                    <p class="card-text">Size: @(((Models.Shoes)prod).Size)</p>
-                }
-                @if (prod is Models.Underwear)
-                {
-                    <p class="card-text">Size: @(((Models.Underwear)prod).Size)</p>
-                    <p class="card-text">Sexy: @(((Models.Underwear)prod).UnderwearSexyness)</p>
-                }
-                <p class="card-text">Gender: @prod.Gender</p>
-                <p class="card-text">Color: @prod.Colors</p>
-                <p>__________________________________________________________________________________________________________________</p>
-                <p class="card-text">@prod.Description</p>
+        <div class="card mb-3" style="width: 70rem;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="@prod.ImageLink" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h3><a asp-page="/ViewProduct" asp-route-productId="@prod.ProductId">@prod.Name</a></h3>
+                        <h5 class="card-text">@prod.Price :- </h5>
+                        <p class="card-text">In stock: @prod.Stock</p>
+                        <p class="card-text">Gender: @prod.Gender</p>
+                        <p class="card-text">Color: @prod.Colors</p>
+                        <p class="card-text">Art nr: @prod.ProductId</p>
+                    </div>
+                </div>
             </div>
         </div>
     }

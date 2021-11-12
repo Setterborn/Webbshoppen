@@ -235,11 +235,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sette\\Desktop\\NyaWebbshoppe\\WebbshoppenAPI\\WebbshoppenAPI\\WebbshoppenAPI.csproj",
+      "projectUniqueName": "C:\\Users\\sette\\Desktop\\Webbshoppen\\WebbshoppenAPI\\WebbshoppenAPI\\WebbshoppenAPI.csproj",
       "projectName": "WebbshoppenAPI",
-      "projectPath": "C:\\Users\\sette\\Desktop\\NyaWebbshoppe\\WebbshoppenAPI\\WebbshoppenAPI\\WebbshoppenAPI.csproj",
+      "projectPath": "C:\\Users\\sette\\Desktop\\Webbshoppen\\WebbshoppenAPI\\WebbshoppenAPI\\WebbshoppenAPI.csproj",
       "packagesPath": "C:\\Users\\sette\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sette\\Desktop\\NyaWebbshoppe\\WebbshoppenAPI\\WebbshoppenAPI\\obj\\",
+      "outputPath": "C:\\Users\\sette\\Desktop\\Webbshoppen\\WebbshoppenAPI\\WebbshoppenAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\sette\\AppData\\Roaming\\NuGet\\NuGet.Config",

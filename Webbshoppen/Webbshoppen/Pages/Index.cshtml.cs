@@ -11,29 +11,22 @@ namespace Webbshoppen.Pages
 {
     public class IndexModel : PageModel
     {
-       
+        [BindProperty(SupportsGet = true)]
         public string FindProduct { get; set; }
         public int Index { get; set; }
         public string ShopName { get; set; }
-        
-        
-
         public void OnGet(int index)
         {
-          
-
-            ShopName = "Comfortable Store";
-            
+            ShopName = "Comfortable Clothing";
         }
-       /* public IActionResult OnPost()
+       public IActionResult OnPost()
         {
             if (ModelState.IsValid == false)
-
             {
                 return Page();
             }
-            
-            return ViewSortedList();
-        }*/
+            Data.ProductManager.SearchInput = FindProduct;
+            return RedirectToPage("ViewSortedPages",new {index = 9 });
+        }
     }
 }
