@@ -9,14 +9,29 @@ using Webbshoppen.Data;
 
 namespace Webbshoppen.Pages
 {
+    [BindProperties]
     public class ViewProductModel : PageModel
     {
-        public List<Product> TheProduct { get; set; }
+        public Product TheProduct { get; set; }
+        public int NumberOfItems { get; set; }
+        public int ProductId { get; set; }
 
         public void OnGet(int productId)
         {
-            productId = 15;
-            TheProduct = ProductManager.ProductList.Where(p => p.ProductId == productId).ToList();
+            ProductId = productId;
+            TheProduct = ProductManager.ProductList[productId];
+        }
+        public IActionResult OnPost(int input)
+        {
+            if (ProductManager.ProductList[ProductId].Stock >= input)
+            {
+                for (int i = 0; i < input; i++)
+                {
+                    ProductManager.Cart.Add(ProductManager.ProductList[ProductId]);
+                    ProductManager.ProductList[ProductId].Stock--;     
+                }
+            }
+            return RedirectToPage("/ViewCart");
         }
     }
 }

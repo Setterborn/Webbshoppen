@@ -4,15 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Webbshoppen.Data;
 
 namespace Webbshoppen.Pages
 {
-    public class ViewSortedPagesModel : PageModel
+    public class AdminModel : PageModel
     {
-        public void OnGet(int index)
+        public void OnGet()
         {
-            ProductManager.SortList(index);
         }
     }
 }
