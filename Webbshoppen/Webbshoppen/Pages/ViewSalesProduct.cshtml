@@ -1,0 +1,46 @@
+﻿@page
+@model Webbshoppen.Pages.ViewSalesProductModel
+@{
+}
+<div>
+    <div class="card mx-auto" style="width: 50rem; color: darkslategray;">
+        <img src="@Model.TheProduct.ImageLink." class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">@Model.TheProduct.Name</h5>
+            <p class="card-text">@Model.TheProduct.Price Sek</p>
+            <p class="card-text">In stock: @Model.TheProduct.Stock </p>
+            @if (Model.TheProduct is Models.Jackets)
+            {
+                <p class="card-text">Size: @(((Models.Jackets)Model.TheProduct).Size)</p>
+                <p class="card-text">Jacket lenght: @(((Models.Jackets)Model.TheProduct).JacketLenght)</p>
+            }
+            @if (Model.TheProduct is Models.Pants)
+            {
+                <p class="card-text">Size: @(((Models.Pants)Model.TheProduct).Size)</p>
+            }
+            @if (Model.TheProduct is Models.Shirts)
+            {
+                <p class="card-text">Size: @(((Models.Shirts)Model.TheProduct).Size)</p>
+            }
+            @if (Model.TheProduct is Models.Shoes)
+            {
+                <p class="card-text">Size: @(((Models.Shoes)Model.TheProduct).Size)</p>
+            }
+            @if (Model.TheProduct is Models.Underwear)
+            {
+                <p class="card-text">Size: @(((Models.Underwear)Model.TheProduct).Size)</p>
+                <p class="card-text">Sexy: @(((Models.Underwear)Model.TheProduct).UnderwearSexyness)</p>
+            }
+            <p class="card-text">Gender: @Model.TheProduct.Gender</p>
+            <p class="card-text">Color: @Model.TheProduct.Colors</p>
+            <p class="card-text">Art nr: @Model.TheProduct.ProductId</p>
+            <p>__________________________________________________________________________________________________________________</p>
+            <p class="card-text">@Model.TheProduct.Description</p>
+            <p>__________________________________________________________________________________________________________________</p>
+            <form method="post">
+                <input type="number" name="input" value="number" placeholder="pcs" />
+                <button type="submit" class="btn btn-outline-secondary"><p>Add to cart</p></button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -3,6 +3,7 @@
 @{
     ViewData["Title"] = "Shopping Cart";
 }
+<h1>Shopping Cart</h1>
 <div>
     @if (Data.ProductManager.Cart.Count < 1) { <h1>The cart is empty</h1>}
     @foreach (Models.Product prod in Data.ProductManager.Cart)
@@ -30,3 +31,4 @@
     </div>
     }
 </div>
+<a class="btn btn-primary" href="/Checkout" role="button">To checkout</a>
