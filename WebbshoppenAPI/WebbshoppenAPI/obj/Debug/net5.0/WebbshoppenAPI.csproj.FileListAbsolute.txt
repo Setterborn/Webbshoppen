@@ -86,3 +86,4 @@ C:\Users\sette\Desktop\Webbshoppen\WebbshoppenAPI\WebbshoppenAPI\obj\Debug\net5.
 C:\Users\sette\Desktop\Webbshoppen\WebbshoppenAPI\WebbshoppenAPI\obj\Debug\net5.0\ref\WebbshoppenAPI.dll
 C:\Users\sette\Desktop\Webbshoppen\WebbshoppenAPI\WebbshoppenAPI\obj\Debug\net5.0\WebbshoppenAPI.pdb
 C:\Users\sette\Desktop\Webbshoppen\WebbshoppenAPI\WebbshoppenAPI\obj\Debug\net5.0\WebbshoppenAPI.genruntimeconfig.cache
+C:\Users\sette\source\repos\Setterborn\Webbshoppen\WebbshoppenAPI\WebbshoppenAPI\bin\Debug\net5.0\Newtonsoft.Json.dll

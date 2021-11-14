@@ -23,5 +23,22 @@ namespace Webbshoppen.Models
             JacketLenght = jacketLenght;
             ImageLink= imageLink;
         }
+        public static Jackets Clone(Jackets input)
+        {
+            var temp = new Jackets
+            (
+                input.ProductId,
+                input.Size,
+                input.Colors,
+                input.Gender,
+                input.Name,
+                input.Price,
+                input.Description,
+                input.Stock,
+                input.JacketLenght,
+                input.ImageLink
+            );
+            return temp;
+        }
     }
 }

@@ -13,12 +13,14 @@ namespace Webbshoppen.Data
     [BindProperties]
     public class ProductManager
     {
+        public static int TempProductId { get; set; }
+        public static int Discount { get; set; } = 20;
         public static List<Product> ProductList { get; set; } = GetProductList();
         public static List<Product> SortedList { get; set; } = new();
-        public static List<Product> SalesList { get; set; } = GetSalesProduct();
+        public static List<Product> SalesList { get; set; } = new();
         public static List<Product> Cart { get; set; } = new();
         [BindProperty(SupportsGet = true)]
-        public static string SearchInput { get; set; }
+        public static string SearchInput { get; set; } = " ";
         public static List<Product> UpdateProductId(List<Product> productList)
         {
             for (int i = 0; i < productList.Count; i++)
@@ -70,7 +72,7 @@ namespace Webbshoppen.Data
             var httpClient = new HttpClient();
             JsonSerializerSettings settings = new JsonSerializerSettings 
             { 
-                TypeNameHandling = TypeNameHandling.Auto 
+                TypeNameHandling = TypeNameHandling.Auto
             };
             var response = httpClient.GetAsync("https://localhost:44397/Products").GetAwaiter().GetResult();
             var apiResponse = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
@@ -79,20 +81,49 @@ namespace Webbshoppen.Data
             UpdateProductId(ProductList);
             return ProductList;
         }
-        public static List<Product> GetSalesProduct()
+        public static void GetRandomSalesProduct()
         {
-            List<Product> Sales = new();
-            Random rnd = new();
-            var one = rnd.Next(0, ProductList.Count);
-            var two = rnd.Next(0, ProductList.Count);
-            var three = rnd.Next(0, ProductList.Count);
-            ProductList[one].Price = Math.Round(ProductList[one].Price * 0.8);
-            ProductList[two].Price = Math.Round(ProductList[two].Price * 0.8);
-            ProductList[three].Price = Math.Round(ProductList[three].Price * 0.8);
-            Sales.Add(ProductList[one]);
-            Sales.Add(ProductList[two]);
-            Sales.Add(ProductList[three]);
-            return Sales; 
+            SalesList = new();
+            float discount = 100 - Discount;
+            discount = discount / 100;
+            for (int i = 0; i < 3; i++)
+            {
+                Random rnd = new();
+                var rndInt = rnd.Next(0, ProductList.Count);
+                Product temp = new();
+                if (ProductList[rndInt] is Jackets) { temp = Jackets.Clone((Jackets)ProductList[rndInt]); }
+                if (ProductList[rndInt] is Pants) { temp = Pants.Clone((Pants)ProductList[rndInt]); }
+                if (ProductList[rndInt] is Shirts) { temp = Shirts.Clone((Shirts)ProductList[rndInt]); }
+                if (ProductList[rndInt] is Shoes) { temp = Shoes.Clone((Shoes)ProductList[rndInt]); }
+                if (ProductList[rndInt] is Underwear) { temp = Underwear.Clone((Underwear)ProductList[rndInt]); }
+                temp.Price = Math.Round(ProductList[rndInt].Price * discount);
+                SalesList.Add(temp);
+            }
+        }
+        public static void OrderProductList()
+        {
+            ProductList = ProductList.OrderBy(p => p.ProductId).ToList();
+        }
+        public static void AddSalesProduct(int productId)
+        {
+            Product temp = new();
+            if (ProductList[productId] is Jackets) { temp = Jackets.Clone((Jackets)ProductList[productId]); }
+            if (ProductList[productId] is Pants) { temp = Pants.Clone((Pants)ProductList[productId]); }
+            if (ProductList[productId] is Shirts) { temp = Shirts.Clone((Shirts)ProductList[productId]); }
+            if (ProductList[productId] is Shoes) { temp = Shoes.Clone((Shoes)ProductList[productId]); }
+            if (ProductList[productId] is Underwear) { temp = Underwear.Clone((Underwear)ProductList[productId]); }
+            SalesList.Add(temp);
+        }
+        public static void UpdateSalesList()
+        {
+            float discount = 100 - Discount;
+            discount = discount / 100;
+            for (int i = 0; i < SalesList.Count; i++)
+            {
+                var prod = ProductList.Where(p => p.ProductId == SalesList[i].ProductId).ToList();
+                SalesList[i] = prod[0];
+                SalesList[i].Price= Math.Round(SalesList[i].Price * discount);
+            }
         }
     }
 }

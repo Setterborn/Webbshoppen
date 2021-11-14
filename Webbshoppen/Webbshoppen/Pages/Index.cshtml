@@ -42,18 +42,18 @@
         </p>
     </div>
     <div class="row"style="padding-bottom:50px">
-        <h1 class="center">Christmas Sale:20% off selected items</h1>
+        <h1 class="center">Christmas Sale: @Data.ProductManager.Discount% off selected products</h1>
     </div>
     <div class="row" style="padding-bottom:50px">
-        @foreach (Models.Product prod in Data.ProductManager.SalesList)
+        @for (int i = 0; i < Data.ProductManager.SalesList.Count; i++)
         {
             <div class="col">
                 <div class="card center" style="width: 15rem;padding:10px">
-                    <img src="@prod.ImageLink" class="card-img-top" alt="">
+                    <img src="@Data.ProductManager.SalesList[i].ImageLink" class="card-img-top" alt="">
                     <div class="card-body">
-                        <h5 class="card-title">@prod.Name</h5>
-                        <p class="card-text">Now 20% discount on @prod.Name in the store. Check it out!</p>
-                        <p><a asp-page="/ViewProduct" asp-route-productId="@prod.ProductId">Take me there!</a></p>
+                        <h5 class="card-title">@Data.ProductManager.SalesList[i].Name</h5>
+                        <p class="card-text">Now @Data.ProductManager.Discount% discount on @Data.ProductManager.SalesList[i].Name in the store. Check it out!</p>
+                        <p><a asp-page="/ViewSalesProduct" asp-route-productId="@i">Take me there!</a></p>
                     </div>
                 </div>
             </div>
