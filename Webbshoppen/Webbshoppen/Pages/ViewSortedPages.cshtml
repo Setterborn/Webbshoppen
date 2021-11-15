@@ -13,15 +13,19 @@
                 <div class="col-md-4">
                     <img src="@prod.ImageLink" class="img-fluid rounded-start" alt="...">
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-3">
                     <div class="card-body">
                         <h3><a asp-page="/ViewProduct" asp-route-productId="@prod.ProductId">@prod.Name</a></h3>
-                        <h5 class="card-text">@prod.Price :- </h5>
+                        <h5 class="card-text">@(Math.Round(prod.Price*1.25)) :- </h5>
                         <p class="card-text">In stock: @prod.Stock</p>
                         <p class="card-text">Gender: @prod.Gender</p>
                         <p class="card-text">Color: @prod.Colors</p>
                         <p class="card-text">Art nr: @prod.ProductId</p>
                     </div>
+                </div>
+                <div class="col-md-5">
+                    <p>  </p>
+                    <p>@prod.Description</p>
                 </div>
             </div>
         </div>

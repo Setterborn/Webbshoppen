@@ -57,7 +57,7 @@ namespace Webbshoppen.Pages
                     else { CState = 106; }
                 }
             }
-            if (input == 108) { ProductManager.AddSalesProduct(ProductId); CState = 107; }
+            if (input == 108) { ProductManager.AddSalesProduct(ProductId); ProductManager.UpdateSalesList(); CState = 107; }
             if (input == 109) { ProductManager.SalesList.RemoveAll(p => p.ProductId == ProductId); CState = 108; }
             ProductManager.OrderProductList();
             return Page();

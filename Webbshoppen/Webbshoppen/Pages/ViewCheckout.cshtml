@@ -1,0 +1,101 @@
+﻿@page
+@model Webbshoppen.Pages.ViewCheckoutModel
+@{var currentstate = Model.CState; double total = 0;
+}
+@switch (currentstate)
+{
+    case 0:
+        <div>
+            <div class="row">
+
+            </div>
+            <div class="row">
+                <div class="col">
+                    @foreach (Models.Product prod in Data.ProductManager.Cart)
+                    {
+                        <p>Product: @prod.Name</p>
+                    }
+                </div>
+                <div class="col">
+                    @foreach (Models.Product prod in Data.ProductManager.Cart)
+                    {
+                        <p>Price: @(Math.Round(prod.Price*1.25)) ink. moms</p>
+                    }
+                </div>
+                <div class="col">
+                    @foreach (Models.Product prod in Data.ProductManager.Cart)
+                    {
+                        <p>Stock: @prod.Stock</p>
+                    }
+                </div>
+            </div>
+            <div class="row">
+                <p>Total ex moms: @Model.Total sek   Total ink. 25% moms: @(Model.Total*1.25) sek</p>
+            </div>
+            <div class="row">
+                <form method="post">
+                    <input type="hidden" name="input" value="1" placeholder="Next" />
+                    <button type="submit" class="btn btn-primary"><p>Next</p></button>
+                </form>
+            </div>
+        </div>
+        break;
+    case 1:
+        <form method="post">
+            <p>First name:</p>
+            <input type="text" asp-for="@Model.FirstName" placeholder="FirstName" />
+            <p>----------------------------------------------------</p>
+            <p>Second name:</p>
+            <input type="text" asp-for="@Model.SecondName" placeholder="LastName" />
+            <p>----------------------------------------------------</p>
+            <p>Street name:</p>
+            <input type="text" asp-for="@Model.Street" placeholder="Street" />
+            <p>----------------------------------------------------</p>
+            <p>Zip Code:</p>
+            <input type="number" asp-for="@Model.ZipCode" placeholder="Size" name="Zip Code" />
+            <p>----------------------------------------------------</p>
+            <p>City name:</p>
+            <input type="text" asp-for="@Model.City" placeholder="City" />
+            <p>----------------------------------------------------</p>
+            <p>Shipping option:</p>
+            <div>
+                <input type="radio" asp-for="@Model.ShippingOption" id="ShippingOption" name="ShippingOption" value="@Models.Shipping.Express">
+                <label for="ShippingOption">Express</label>
+            </div>
+            <div>
+                <input type="radio" asp-for="@Model.ShippingOption" id="ShippingOption" name="ShippingOption" value="@Models.Shipping.Normal">
+                <label for="ShippingOption">Normal</label>
+            </div>
+            <p>----------------------------------------------------</p>
+            <input type="hidden" name="input" value="2" placeholder="SubmitOrder" />
+            <button type="submit" class="btn btn-primary"><p>Place order</p></button>
+        </form>
+        break;
+    case 2:
+        <h1>Enter credit card number (10 digit)</h1>
+        <h5>Your card will be debited @(Data.ProductManager.TempTotal*1.25) sek</h5>
+        <p>----------------------------------------------------</p>
+        <form method="post">
+            <p>Creditcard number:</p>
+            <input type="number" asp-for="@Model.CCNumber" placeholder="CCNumber" name="CCNumber" />
+            <input type="hidden" name="input" value="3" placeholder="SubmitPayment" />
+            <button type="submit" class="btn btn-primary"><p>Pay</p></button>
+        </form>
+        break;
+    case 3:
+        <h5>Payment sucessfull! We will start processing your order as soon as possible!</h5>
+        <meta http-equiv="refresh" content="3; URL=/Index" />
+        break;
+    case 4:
+        <h1>Credit card number needs to be 10 digits</h1>
+        <form method="post">
+            <p>Try again:</p>
+            <input type="hidden" name="input" value="2" placeholder="SubmitPayment" />
+            <button type="submit" class="btn btn-primary"><p>Back</p></button>
+        </form>
+        break;
+    case 5:
+        <h1>Error, order not placed, please try again</h1>
+        <meta http-equiv="refresh" content="1; URL=/Index" />
+        break;
+}

@@ -13,6 +13,7 @@ namespace Webbshoppen.Data
     [BindProperties]
     public class ProductManager
     {
+        public static double TempTotal { get; set; }
         public static int TempProductId { get; set; }
         public static int Discount { get; set; } = 20;
         public static List<Product> ProductList { get; set; } = GetProductList();
@@ -118,11 +119,19 @@ namespace Webbshoppen.Data
         {
             float discount = 100 - Discount;
             discount = discount / 100;
+
             for (int i = 0; i < SalesList.Count; i++)
             {
-                var prod = ProductList.Where(p => p.ProductId == SalesList[i].ProductId).ToList();
-                SalesList[i] = prod[0];
-                SalesList[i].Price= Math.Round(SalesList[i].Price * discount);
+                Product temp = new();
+                int productId = SalesList[i].ProductId;
+                SalesList.RemoveAll(p => p.ProductId == productId);
+                if (ProductList[productId] is Jackets) { temp = Jackets.Clone((Jackets)ProductList[productId]); }
+                if (ProductList[productId] is Pants) { temp = Pants.Clone((Pants)ProductList[productId]); }
+                if (ProductList[productId] is Shirts) { temp = Shirts.Clone((Shirts)ProductList[productId]); }
+                if (ProductList[productId] is Shoes) { temp = Shoes.Clone((Shoes)ProductList[productId]); }
+                if (ProductList[productId] is Underwear) { temp = Underwear.Clone((Underwear)ProductList[productId]); }
+                temp.Price = Math.Round(temp.Price * discount);
+                SalesList.Add(temp);
             }
         }
     }
