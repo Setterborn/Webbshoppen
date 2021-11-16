@@ -3,8 +3,14 @@
     "",
     "\\Webbshoppen",
     "\\Webbshoppen\\Webbshoppen",
-    "\\Webbshoppen\\Webbshoppen\\Pages"
+    "\\Webbshoppen\\Webbshoppen\\Data",
+    "\\Webbshoppen\\Webbshoppen\\Models",
+    "\\Webbshoppen\\Webbshoppen\\wwwroot",
+    "\\Webbshoppen\\Webbshoppen\\wwwroot\\css",
+    "\\Webbshoppen\\Webbshoppen\\wwwroot\\Image",
+    "\\Webbshoppen\\Webbshoppen\\wwwroot\\js",
+    "\\Webbshoppen\\Webbshoppen\\wwwroot\\lib"
   ],
-  "SelectedNode": "\\Webbshoppen\\Webbshoppen.sln",
+  "SelectedNode": "\\Webbshoppen\\Webbshoppen\\Pages\\ViewProduct.cshtml",
   "PreviewInSolutionExplorer": false
 }

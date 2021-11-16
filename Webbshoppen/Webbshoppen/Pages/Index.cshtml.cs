@@ -13,7 +13,9 @@ namespace Webbshoppen.Pages
     {
        
         public string FindProduct { get; set; }
+
         public int Index { get; set; }
+
         public string ShopName { get; set; }
         
         

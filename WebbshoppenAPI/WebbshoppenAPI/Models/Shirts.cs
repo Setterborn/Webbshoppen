@@ -7,16 +7,20 @@ namespace WebbshoppenAPI.Models
 {
     public class Shirts : Product
     {
-        public int Size { get; set; }
+        public string Size { get; set; }
+        
 
-        public Shirts(int productId, int size, Colors color, Gender gender, string name, double price, string description, int stock, string imageLink)
+        public Shirts(int productId, string size, Colors color, Gender gender, string name, double price, string description, int stock, string imageLink)
         {
             ProductId = productId;
+           
             Size = size;
             Colors = color;
             Gender = gender;
             Name = name;
+            
             Price = price;
+           
             Description = description;
             Stock = stock;
             ImageLink = imageLink;

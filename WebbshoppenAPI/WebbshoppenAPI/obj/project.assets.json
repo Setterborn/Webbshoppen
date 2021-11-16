@@ -230,19 +230,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\sette\\.nuget\\packages\\": {}
+    "C:\\Users\\Frank\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sette\\Desktop\\NyaWebbshoppe\\WebbshoppenAPI\\WebbshoppenAPI\\WebbshoppenAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Frank\\Documents\\GitHub\\Webbshoppen\\Fjäder\\WebbshoppenAPI\\WebbshoppenAPI\\WebbshoppenAPI.csproj",
       "projectName": "WebbshoppenAPI",
-      "projectPath": "C:\\Users\\sette\\Desktop\\NyaWebbshoppe\\WebbshoppenAPI\\WebbshoppenAPI\\WebbshoppenAPI.csproj",
-      "packagesPath": "C:\\Users\\sette\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sette\\Desktop\\NyaWebbshoppe\\WebbshoppenAPI\\WebbshoppenAPI\\obj\\",
+      "projectPath": "C:\\Users\\Frank\\Documents\\GitHub\\Webbshoppen\\Fjäder\\WebbshoppenAPI\\WebbshoppenAPI\\WebbshoppenAPI.csproj",
+      "packagesPath": "C:\\Users\\Frank\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Frank\\Documents\\GitHub\\Webbshoppen\\Fjäder\\WebbshoppenAPI\\WebbshoppenAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\sette\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Frank\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -295,7 +295,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -81,3 +81,6 @@ C:\Users\sette\Desktop\NyaWebbshoppe\Webbshoppen\Webbshoppen\obj\Debug\net5.0\We
 C:\Users\sette\Desktop\NyaWebbshoppe\Webbshoppen\Webbshoppen\obj\Debug\net5.0\Webbshoppen.csproj.CopyComplete
 C:\Users\sette\Desktop\NyaWebbshoppe\Webbshoppen\Webbshoppen\obj\Debug\net5.0\Webbshoppen.genruntimeconfig.cache
 C:\Users\sette\Desktop\NyaWebbshoppe\Webbshoppen\Webbshoppen\obj\Debug\net5.0\Razor\Pages\ViewSortedPages.cshtml.g.cs
+C:\Users\Frank\Documents\GitHub\Webbshoppen\Fjäder\Webbshoppen\Webbshoppen\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\Frank\Documents\GitHub\Webbshoppen\Fjäder\Webbshoppen\Webbshoppen\obj\Debug\net5.0\Razor\Pages\ViewProduct.cshtml.g.cs
+C:\Users\Frank\Documents\GitHub\Webbshoppen\Fjäder\Webbshoppen\Webbshoppen\obj\Debug\net5.0\Razor\Pages\ViewSortedPages.cshtml.g.cs

@@ -8,9 +8,22 @@ namespace WebbshoppenAPI.Models
     public enum Colors
     {
         Black,
-        Red,
+        Brown,
+        Green,
+        DarkBlue,
+        White,
+        Greyblue,
+        Blue,
         Yellow,
-        Blue
+        Lightblue,
+        PrintedColor,
+        Red,
+        MixedColor,
+        Grey,
+        Pink,
+        Orange,
+        Purple,
+        LightBrown,
     }
     
 }
