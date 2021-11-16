@@ -22,5 +22,21 @@ namespace Webbshoppen.Models
             Stock = stock;
             ImageLink = imageLink;
         }
+        public static Pants Clone(Pants input)
+        {
+            var temp = new Pants
+            (
+                input.ProductId,
+                input.Size,
+                input.Colors,
+                input.Gender,
+                input.Name,
+                input.Price,
+                input.Description,
+                input.Stock,
+                input.ImageLink
+            );
+            return temp;
+        }
     }
 }

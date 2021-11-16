@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "NsAqc07w2RqXmgj+F/Mf2bQbcJ05aL3X9SEr5QFdUssE89njHsWf3Ceu8FXOC1f3Lxw0WeoLNdeNm1xdzkvY9Q==",
+  "dgSpecHash": "aZbY2o45cVCJe6CzbuKH3vqwZbRYnnC9SpNEOxKoj0juWQT+M+jc8YPq5O0KUpbKGbNKBLZec16n+rxQrBUI7A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Frank\\Documents\\GitHub\\Webbshoppen\\Fjäder\\Webbshoppen\\Webbshoppen\\Webbshoppen.csproj",
+  "projectFilePath": "C:\\Users\\sette\\Source\\Repos\\Setterborn\\Webbshoppen\\Webbshoppen\\Webbshoppen\\Webbshoppen.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Frank\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+    "C:\\Users\\sette\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
   ],
   "logs": []
 }

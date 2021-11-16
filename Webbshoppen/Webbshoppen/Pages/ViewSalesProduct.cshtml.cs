@@ -4,13 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Webbshoppen.Models;
 using Webbshoppen.Data;
+using Webbshoppen.Models;
 
 namespace Webbshoppen.Pages
 {
-    [BindProperties]
-    public class ViewProductModel : PageModel
+    public class ViewSalesProductModel : PageModel
     {
         public Product TheProduct { get; set; }
         public int NumberOfItems { get; set; }
@@ -19,16 +18,16 @@ namespace Webbshoppen.Pages
         public void OnGet(int productId)
         {
             ProductId = productId;
-            TheProduct = ProductManager.ProductList[productId];
+            TheProduct = ProductManager.SalesList[productId];
         }
         public IActionResult OnPost(int input)
         {
-            if (ProductManager.ProductList[ProductId].Stock >= input)
+            if (ProductManager.SalesList[ProductId].Stock >= input)
             {
                 for (int i = 0; i < input; i++)
                 {
-                    ProductManager.Cart.Add(ProductManager.ProductList[ProductId]);
-                    ProductManager.ProductList[ProductId].Stock--;     
+                    ProductManager.Cart.Add(ProductManager.SalesList[ProductId]);
+                    ProductManager.SalesList[ProductId].Stock--;
                 }
             }
             return RedirectToPage("/ViewCart");

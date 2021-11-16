@@ -23,5 +23,22 @@ namespace Webbshoppen.Models
             UnderwearSexyness = underwearSexyness;
             ImageLink = imageLink;
         }
+        public static Underwear Clone(Underwear input)
+        {
+            var temp = new Underwear
+            (
+                input.ProductId,
+                input.Size,
+                input.Colors,
+                input.Gender,
+                input.Name,
+                input.Price,
+                input.Description,
+                input.Stock,
+                input.UnderwearSexyness,
+                input.ImageLink
+            );
+            return temp;
+        }
     }
 }

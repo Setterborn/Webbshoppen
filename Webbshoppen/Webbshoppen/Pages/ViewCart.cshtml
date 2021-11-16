@@ -1,0 +1,34 @@
+﻿@page
+@model Webbshoppen.Pages.ViewCartModel
+@{
+    ViewData["Title"] = "Shopping Cart";
+}
+<h1>Shopping Cart</h1>
+<div>
+    @if (Data.ProductManager.Cart.Count < 1) { <h1>The cart is empty</h1>}
+    @foreach (Models.Product prod in Data.ProductManager.Cart)
+    {
+    <div class="card mb-3" style="width: 70rem;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="@prod.ImageLink" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h3><a asp-page="/ViewProduct" asp-route-productId="@prod.ProductId">@prod.Name</a></h3>
+                    <h5 class="card-text">@prod.Price :- </h5>
+                    <p class="card-text">In stock: @prod.Stock</p>
+                    <p class="card-text">Gender: @prod.Gender</p>
+                    <p class="card-text">Color: @prod.Colors</p>
+                    <p class="card-text">Art nr:@prod.ProductId</p>
+                    <form method="post">
+                        <input type="hidden" name="input" value="@prod.ProductId" placeholder="delete" />
+                        <button type="submit" class="btn btn-primary"><p>Delete</p></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    }
+</div>
+<a class="btn btn-primary" href="/Checkout" role="button">To checkout</a>
