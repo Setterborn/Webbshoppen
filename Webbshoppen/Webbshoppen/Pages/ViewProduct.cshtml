@@ -5,7 +5,7 @@
 }
 <div>
     <div class="card mx-auto" style="width: 50rem; color: darkslategray;">
-        <img src="@Model.TheProduct.ImageLink." class="card-img-top" alt="...">
+        <img src=@Model.TheProduct.ImageLink class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">@Model.TheProduct.Name</h5>
             <p class="card-text">@(Math.Round(Model.TheProduct.Price*1.25)) Sek</p>
