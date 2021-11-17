@@ -11,7 +11,7 @@
         <div class="card mb-3" style="width: 70rem;">
             <div class="row g-0">
                 <div class="col-md-4">
-                    <img src="@prod.ImageLink" class="img-fluid rounded-start" alt="...">
+                    <img src="@prod.ImageLink" class="img-fluid rounded-start" style="height:350px;max-width:350px" alt="...">
                 </div>
                 <div class="col-md-3">
                     <div class="card-body">
@@ -21,6 +21,26 @@
                         <p class="card-text">Gender: @prod.Gender</p>
                         <p class="card-text">Color: @prod.Colors</p>
                         <p class="card-text">Art nr: @prod.ProductId</p>
+                        @if (prod is Models.Jackets)
+                        {
+                            <p class="card-text">Size: @(((Models.Jackets)prod).Size)</p>
+                        }
+                        @if (prod is Models.Pants)
+                        {
+                            <p class="card-text">Size: @(((Models.Pants)prod).Size)</p>
+                        }
+                        @if (prod is Models.Shirts)
+                        {
+                            <p class="card-text">Size: @(((Models.Shirts)prod).Size)</p>
+                        }
+                        @if (prod is Models.Shoes)
+                        {
+                            <p class="card-text">Size: @(((Models.Shoes)prod).Size)</p>
+                        }
+                        @if (prod is Models.Underwear)
+                        {
+                            <p class="card-text">Size: @(((Models.Underwear)prod).Size)</p>
+                        }
                     </div>
                 </div>
                 <div class="col-md-5">

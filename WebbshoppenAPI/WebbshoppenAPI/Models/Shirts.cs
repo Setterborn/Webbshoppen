@@ -18,9 +18,7 @@ namespace WebbshoppenAPI.Models
             Colors = color;
             Gender = gender;
             Name = name;
-            
             Price = price;
-           
             Description = description;
             Stock = stock;
             ImageLink = imageLink;

@@ -7,9 +7,9 @@ namespace Webbshoppen.Models
 {
     public class Shirts : Product
     {
-        public int Size { get; set; }
+        public string Size { get; set; }
 
-        public Shirts(int productId, int size, Colors color, Gender gender, string name, double price, string description, int stock, string imageLink)
+        public Shirts(int productId, string size, Colors color, Gender gender, string name, double price, string description, int stock, string imageLink)
         {
             ProductId = productId;
             Size = size;

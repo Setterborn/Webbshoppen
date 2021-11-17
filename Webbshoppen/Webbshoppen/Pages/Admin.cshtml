@@ -126,416 +126,731 @@
         </form>
         break;
     case 7: // Formulär för att skapa Jacka
-        <form method="post">
-            <p>Name:</p>
-            <input type="text" asp-for="@Model.Name" placeholder="Name" />
-            <p>----------------------------------------------------</p>
-            <p>Size:</p>
-            <input type="number" asp-for="@Model.Size" placeholder="Size" name="Size" />
-            <p>----------------------------------------------------</p>
-            <p>Color:</p>
-            <div>
-                <input type="radio" asp-for="@Model.Colors" id="Black" name="Color" value="@Models.Colors.Black" checked>
-                <label for="Black">Black</label>
-            </div>
-            <div>
-                <input type="radio" asp-for="@Model.Colors" id="Red" name="Color" value="@Models.Colors.Red">
-                <label for="Red">Red</label>
-            </div>
-            <div>
-                <input type="radio" asp-for="@Model.Colors" id="Yellow" name="Color" value="@Models.Colors.Yellow">
-                <label for="Yellow">Yellow</label>
-            </div>
-            <div>
-                <input type="radio" asp-for="@Model.Colors" id="Blue" name="Color" value="@Models.Colors.Blue">
-                <label for="Blue">Blue</label>
-            </div>
-            <p>----------------------------------------------------</p>
-            <p>Gender:</p>
-            <div>
-                <input type="radio" asp-for="@Model.Gender" id="Male" name="Gender" value="@Models.Gender.Male" checked>
-                <label for="Male">Male</label>
-            </div>
-            <div>
-                <input type="radio" asp-for="@Model.Gender" id="Female" name="Gender" value="@Models.Gender.Female">
-                <label for="Female">Female</label>
-            </div>
-            <div>
-                <input type="radio" asp-for="@Model.Gender" id="Unisex" name="Gender" value="@Models.Gender.Unisex">
-                <label for="Unisex">Unisex</label>
-            </div>
-            <p>----------------------------------------------------</p>
-            <p>Price:</p>
-            <input type="number" asp-for="@Model.Price" placeholder="Price" />
-            <p>----------------------------------------------------</p>
-            <p>Description:</p>
-            <textarea type="text" asp-for="@Model.Description" placeholder="Description" rows="10" cols="60" name="description"></textarea>
-            <p>----------------------------------------------------</p>
-            <p>Stock: </p>
-            <input type="number" asp-for="@Model.Stock" placeholder="Stock" />
-            <p>----------------------------------------------------</p>
-            <p>Jacket lenght:</p>
-            <div>
-                <input type="radio" asp-for="@Model.JacketLenght" id="Long" name="JacketLenght" value="@Models.JacketLenght.Long" checked>
-                <label for="Long">Long</label>
-            </div>
-            <div>
-                <input type="radio" asp-for="@Model.JacketLenght" id="Short" name="JacketLenght" value="@Models.JacketLenght.Short">
-                <label for="Short">Short</label>
-            </div>
-            <div>
-                <input type="radio" asp-for="@Model.JacketLenght" id="Medium" name="JacketLenght" value="@Models.JacketLenght.Medium">
-                <label for="Medium">Medium</label>
-            </div>
-            <p>----------------------------------------------------</p>
-            <p>ImageLink:</p>
-            <input type="text" asp-for="@Model.ImageLink" placeholder="ImageLink" />
-            <p>----------------------------------------------------</p>
-            <input type="hidden" name="input" value="100" placeholder="SubmitAdd" />
-            <button type="submit" class="btn btn-primary" style="height:40px"><p>Add Jacket</p></button>
-        </form>
+<form method="post">
+    <p>Name:</p>
+    <input type="text" asp-for="@Model.Name" placeholder="Name" />
+    <p>----------------------------------------------------</p>
+    <p>Size:</p>
+    <input type="text" asp-for="@Model.SizeStr" placeholder="Size" />
+    <p>----------------------------------------------------</p>
+    <p>Color:</p>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Black" name="Color" value="@Models.Colors.Black" checked>
+        <label for="Black">Black</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Red" name="Color" value="@Models.Colors.Red">
+        <label for="Red">Red</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Yellow" name="Color" value="@Models.Colors.Yellow">
+        <label for="Yellow">Yellow</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Blue" name="Color" value="@Models.Colors.Blue">
+        <label for="Blue">Blue</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Brown" name="Color" value="@Models.Colors.Brown">
+        <label for="Brown">Brown</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Green" name="Color" value="@Models.Colors.Green">
+        <label for="Green">Green</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="DarkBlue" name="Color" value="@Models.Colors.DarkBlue">
+        <label for="DarkBlue">DarkBlue</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="White" name="Color" value="@Models.Colors.White">
+        <label for="White">White</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Greyblue" name="Color" value="@Models.Colors.Greyblue">
+        <label for="Greyblue">Greyblue</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Lightblue" name="Color" value="@Models.Colors.Lightblue">
+        <label for="Lightblue">Lightblue</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="PrintedColor" name="Color" value="@Models.Colors.PrintedColor">
+        <label for="PrintedColor">PrintedColor</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="MixedColor" name="Color" value="@Models.Colors.MixedColor">
+        <label for="MixedColor">MixedColor</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Grey" name="Color" value="@Models.Colors.Grey">
+        <label for="Grey">Grey</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Pink" name="Color" value="@Models.Colors.Pink">
+        <label for="Pink">Pink</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Orange" name="Color" value="@Models.Colors.Orange">
+        <label for="Orange">Orange</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Purple" name="Color" value="@Models.Colors.Purple">
+        <label for="Purple">Purple</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="LightBrown" name="Color" value="@Models.Colors.LightBrown">
+        <label for="LightBrown">LightBrown</label>
+    </div>
+    <p>----------------------------------------------------</p>
+    <p>Gender:</p>
+    <div>
+        <input type="radio" asp-for="@Model.Gender" id="Male" name="Gender" value="@Models.Gender.Male" checked>
+        <label for="Male">Male</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Gender" id="Female" name="Gender" value="@Models.Gender.Female">
+        <label for="Female">Female</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Gender" id="Unisex" name="Gender" value="@Models.Gender.Unisex">
+        <label for="Unisex">Unisex</label>
+    </div>
+    <p>----------------------------------------------------</p>
+    <p>Price:</p>
+    <input type="number" asp-for="@Model.Price" placeholder="Price" />
+    <p>----------------------------------------------------</p>
+    <p>Description:</p>
+    <textarea type="text" asp-for="@Model.Description" placeholder="Description" rows="10" cols="60" name="description"></textarea>
+    <p>----------------------------------------------------</p>
+    <p>Stock: </p>
+    <input type="number" asp-for="@Model.Stock" placeholder="Stock" />
+    <p>----------------------------------------------------</p>
+    <p>Jacket lenght:</p>
+    <div>
+        <input type="radio" asp-for="@Model.JacketLenght" id="Long" name="JacketLenght" value="@Models.JacketLenght.Long" checked>
+        <label for="Long">Long</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.JacketLenght" id="Short" name="JacketLenght" value="@Models.JacketLenght.Short">
+        <label for="Short">Short</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.JacketLenght" id="Medium" name="JacketLenght" value="@Models.JacketLenght.Medium">
+        <label for="Medium">Medium</label>
+    </div>
+    <p>----------------------------------------------------</p>
+    <p>ImageLink:</p>
+    <input type="text" asp-for="@Model.ImageLink" placeholder="ImageLink" />
+    <p>----------------------------------------------------</p>
+    <input type="hidden" name="input" value="100" placeholder="SubmitAdd" />
+    <button type="submit" class="btn btn-primary" style="height:40px"><p>Add Jacket</p></button>
+</form>
         break;
     case 8: // Formulär för att skapa Byxor
-        <form method="post">
-            <p>Name:</p>
-            <input type="text" asp-for="@Model.Name" placeholder="Name" />
-            <p>----------------------------------------------------</p>
-            <p>Size:</p>
-            <input type="number" asp-for="@Model.Size" placeholder="Size" name="Size" />
-            <p>----------------------------------------------------</p>
-            <p>Color:</p>
-            <div>
-                <input type="radio" asp-for="@Model.Colors" id="Black" name="Color" value="@Models.Colors.Black" checked>
-                <label for="Black">Black</label>
-            </div>
-            <div>
-                <input type="radio" asp-for="@Model.Colors" id="Red" name="Color" value="@Models.Colors.Red">
-                <label for="Red">Red</label>
-            </div>
-            <div>
-                <input type="radio" asp-for="@Model.Colors" id="Yellow" name="Color" value="@Models.Colors.Yellow">
-                <label for="Yellow">Yellow</label>
-            </div>
-            <div>
-                <input type="radio" asp-for="@Model.Colors" id="Blue" name="Color" value="@Models.Colors.Blue">
-                <label for="Blue">Blue</label>
-            </div>
-            <p>----------------------------------------------------</p>
-            <p>Gender:</p>
-            <div>
-                <input type="radio" asp-for="@Model.Gender" id="Male" name="Gender" value="@Models.Gender.Male" checked>
-                <label for="Male">Male</label>
-            </div>
-            <div>
-                <input type="radio" asp-for="@Model.Gender" id="Female" name="Gender" value="@Models.Gender.Female">
-                <label for="Female">Female</label>
-            </div>
-            <div>
-                <input type="radio" asp-for="@Model.Gender" id="Unisex" name="Gender" value="@Models.Gender.Unisex">
-                <label for="Unisex">Unisex</label>
-            </div>
-            <p>----------------------------------------------------</p>
-            <p>Price:</p>
-            <input type="number" asp-for="@Model.Price" placeholder="Price" />
-            <p>----------------------------------------------------</p>
-            <p>Description:</p>
-            <textarea type="text" asp-for="@Model.Description" placeholder="Description" rows="10" cols="60" name="description"></textarea>
-            <p>----------------------------------------------------</p>
-            <p>Stock: </p>
-            <input type="number" asp-for="@Model.Stock" placeholder="Stock" />
-            <p>----------------------------------------------------</p>
-            <p>ImageLink:</p>
-            <input type="text" asp-for="@Model.ImageLink" placeholder="ImageLink" />
-            <p>----------------------------------------------------</p>
-            <input type="hidden" name="input" value="101" placeholder="SubmitAdd" />
-            <button type="submit" class="btn btn-primary" style="height:40px"><p>Add Pants</p></button>
-        </form>
+<form method="post">
+    <p>Name:</p>
+    <input type="text" asp-for="@Model.Name" placeholder="Name" />
+    <p>----------------------------------------------------</p>
+    <p>Size:</p>
+    <input type="number" asp-for="@Model.Size" placeholder="Size" name="Size" />
+    <p>----------------------------------------------------</p>
+    <p>Color:</p>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Black" name="Color" value="@Models.Colors.Black" checked>
+        <label for="Black">Black</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Red" name="Color" value="@Models.Colors.Red">
+        <label for="Red">Red</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Yellow" name="Color" value="@Models.Colors.Yellow">
+        <label for="Yellow">Yellow</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Blue" name="Color" value="@Models.Colors.Blue">
+        <label for="Blue">Blue</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Brown" name="Color" value="@Models.Colors.Brown">
+        <label for="Brown">Brown</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Green" name="Color" value="@Models.Colors.Green">
+        <label for="Green">Green</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="DarkBlue" name="Color" value="@Models.Colors.DarkBlue">
+        <label for="DarkBlue">DarkBlue</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="White" name="Color" value="@Models.Colors.White">
+        <label for="White">White</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Greyblue" name="Color" value="@Models.Colors.Greyblue">
+        <label for="Greyblue">Greyblue</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Lightblue" name="Color" value="@Models.Colors.Lightblue">
+        <label for="Lightblue">Lightblue</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="PrintedColor" name="Color" value="@Models.Colors.PrintedColor">
+        <label for="PrintedColor">PrintedColor</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="MixedColor" name="Color" value="@Models.Colors.MixedColor">
+        <label for="MixedColor">MixedColor</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Grey" name="Color" value="@Models.Colors.Grey">
+        <label for="Grey">Grey</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Pink" name="Color" value="@Models.Colors.Pink">
+        <label for="Pink">Pink</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Orange" name="Color" value="@Models.Colors.Orange">
+        <label for="Orange">Orange</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Purple" name="Color" value="@Models.Colors.Purple">
+        <label for="Purple">Purple</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="LightBrown" name="Color" value="@Models.Colors.LightBrown">
+        <label for="LightBrown">LightBrown</label>
+    </div>
+    <p>----------------------------------------------------</p>
+    <p>Gender:</p>
+    <div>
+        <input type="radio" asp-for="@Model.Gender" id="Male" name="Gender" value="@Models.Gender.Male" checked>
+        <label for="Male">Male</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Gender" id="Female" name="Gender" value="@Models.Gender.Female">
+        <label for="Female">Female</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Gender" id="Unisex" name="Gender" value="@Models.Gender.Unisex">
+        <label for="Unisex">Unisex</label>
+    </div>
+    <p>----------------------------------------------------</p>
+    <p>Price:</p>
+    <input type="number" asp-for="@Model.Price" placeholder="Price" />
+    <p>----------------------------------------------------</p>
+    <p>Description:</p>
+    <textarea type="text" asp-for="@Model.Description" placeholder="Description" rows="10" cols="60" name="description"></textarea>
+    <p>----------------------------------------------------</p>
+    <p>Stock: </p>
+    <input type="number" asp-for="@Model.Stock" placeholder="Stock" />
+    <p>----------------------------------------------------</p>
+    <p>ImageLink:</p>
+    <input type="text" asp-for="@Model.ImageLink" placeholder="ImageLink" />
+    <p>----------------------------------------------------</p>
+    <input type="hidden" name="input" value="101" placeholder="SubmitAdd" />
+    <button type="submit" class="btn btn-primary" style="height:40px"><p>Add Pants</p></button>
+</form>
         break;
     case 9: // Formulär för att skapa Tröja
-        <form method="post">
-            <p>Name:</p>
-            <input type="text" asp-for="@Model.Name" placeholder="Name" />
-            <p>----------------------------------------------------</p>
-            <p>Size:</p>
-            <input type="number" asp-for="@Model.Size" placeholder="Size" name="Size" />
-            <p>----------------------------------------------------</p>
-            <p>Color:</p>
-            <div>
-                <input type="radio" asp-for="@Model.Colors" id="Black" name="Color" value="@Models.Colors.Black" checked>
-                <label for="Black">Black</label>
-            </div>
-            <div>
-                <input type="radio" asp-for="@Model.Colors" id="Red" name="Color" value="@Models.Colors.Red">
-                <label for="Red">Red</label>
-            </div>
-            <div>
-                <input type="radio" asp-for="@Model.Colors" id="Yellow" name="Color" value="@Models.Colors.Yellow">
-                <label for="Yellow">Yellow</label>
-            </div>
-            <div>
-                <input type="radio" asp-for="@Model.Colors" id="Blue" name="Color" value="@Models.Colors.Blue">
-                <label for="Blue">Blue</label>
-            </div>
-            <p>----------------------------------------------------</p>
-            <p>Gender:</p>
-            <div>
-                <input type="radio" asp-for="@Model.Gender" id="Male" name="Gender" value="@Models.Gender.Male" checked>
-                <label for="Male">Male</label>
-            </div>
-            <div>
-                <input type="radio" asp-for="@Model.Gender" id="Female" name="Gender" value="@Models.Gender.Female">
-                <label for="Female">Female</label>
-            </div>
-            <div>
-                <input type="radio" asp-for="@Model.Gender" id="Unisex" name="Gender" value="@Models.Gender.Unisex">
-                <label for="Unisex">Unisex</label>
-            </div>
-            <p>----------------------------------------------------</p>
-            <p>Price:</p>
-            <input type="number" asp-for="@Model.Price" placeholder="Price" />
-            <p>----------------------------------------------------</p>
-            <p>Description:</p>
-            <textarea type="text" asp-for="@Model.Description" placeholder="Description" rows="10" cols="60" name="description"></textarea>
-            <p>----------------------------------------------------</p>
-            <p>Stock: </p>
-            <input type="number" asp-for="@Model.Stock" placeholder="Stock" />
-            <p>----------------------------------------------------</p>
-            <p>ImageLink:</p>
-            <input type="text" asp-for="@Model.ImageLink" placeholder="ImageLink" />
-            <p>----------------------------------------------------</p>
-            <input type="hidden" name="input" value="102" placeholder="SubmitAdd" />
-            <button type="submit" class="btn btn-primary" style="height:40px"><p>Add Shirt</p></button>
-        </form>
+<form method="post">
+    <p>Name:</p>
+    <input type="text" asp-for="@Model.Name" placeholder="Name" />
+    <p>----------------------------------------------------</p>
+    <p>Size:</p>
+    <input type="text" asp-for="@Model.SizeStr" placeholder="Size" />
+    <p>----------------------------------------------------</p>
+    <p>Color:</p>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Black" name="Color" value="@Models.Colors.Black" checked>
+        <label for="Black">Black</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Red" name="Color" value="@Models.Colors.Red">
+        <label for="Red">Red</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Yellow" name="Color" value="@Models.Colors.Yellow">
+        <label for="Yellow">Yellow</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Blue" name="Color" value="@Models.Colors.Blue">
+        <label for="Blue">Blue</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Brown" name="Color" value="@Models.Colors.Brown">
+        <label for="Brown">Brown</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Green" name="Color" value="@Models.Colors.Green">
+        <label for="Green">Green</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="DarkBlue" name="Color" value="@Models.Colors.DarkBlue">
+        <label for="DarkBlue">DarkBlue</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="White" name="Color" value="@Models.Colors.White">
+        <label for="White">White</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Greyblue" name="Color" value="@Models.Colors.Greyblue">
+        <label for="Greyblue">Greyblue</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Lightblue" name="Color" value="@Models.Colors.Lightblue">
+        <label for="Lightblue">Lightblue</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="PrintedColor" name="Color" value="@Models.Colors.PrintedColor">
+        <label for="PrintedColor">PrintedColor</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="MixedColor" name="Color" value="@Models.Colors.MixedColor">
+        <label for="MixedColor">MixedColor</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Grey" name="Color" value="@Models.Colors.Grey">
+        <label for="Grey">Grey</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Pink" name="Color" value="@Models.Colors.Pink">
+        <label for="Pink">Pink</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Orange" name="Color" value="@Models.Colors.Orange">
+        <label for="Orange">Orange</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Purple" name="Color" value="@Models.Colors.Purple">
+        <label for="Purple">Purple</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="LightBrown" name="Color" value="@Models.Colors.LightBrown">
+        <label for="LightBrown">LightBrown</label>
+    </div>
+    <p>----------------------------------------------------</p>
+    <p>Gender:</p>
+    <div>
+        <input type="radio" asp-for="@Model.Gender" id="Male" name="Gender" value="@Models.Gender.Male" checked>
+        <label for="Male">Male</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Gender" id="Female" name="Gender" value="@Models.Gender.Female">
+        <label for="Female">Female</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Gender" id="Unisex" name="Gender" value="@Models.Gender.Unisex">
+        <label for="Unisex">Unisex</label>
+    </div>
+    <p>----------------------------------------------------</p>
+    <p>Price:</p>
+    <input type="number" asp-for="@Model.Price" placeholder="Price" />
+    <p>----------------------------------------------------</p>
+    <p>Description:</p>
+    <textarea type="text" asp-for="@Model.Description" placeholder="Description" rows="10" cols="60" name="description"></textarea>
+    <p>----------------------------------------------------</p>
+    <p>Stock: </p>
+    <input type="number" asp-for="@Model.Stock" placeholder="Stock" />
+    <p>----------------------------------------------------</p>
+    <p>ImageLink:</p>
+    <input type="text" asp-for="@Model.ImageLink" placeholder="ImageLink" />
+    <p>----------------------------------------------------</p>
+    <input type="hidden" name="input" value="102" placeholder="SubmitAdd" />
+    <button type="submit" class="btn btn-primary" style="height:40px"><p>Add Shirt</p></button>
+</form>
         break;
     case 10: // Formulär för att skapa Skor
-        <form method="post">
-            <p>Name:</p>
-            <input type="text" asp-for="@Model.Name" placeholder="Name" />
-            <p>----------------------------------------------------</p>
-            <p>Size:</p>
-            <input type="number" asp-for="@Model.Size" placeholder="Size" name="Size" />
-            <p>----------------------------------------------------</p>
-            <p>Color:</p>
-            <div>
-                <input type="radio" asp-for="@Model.Colors" id="Black" name="Color" value="@Models.Colors.Black" checked>
-                <label for="Black">Black</label>
-            </div>
-            <div>
-                <input type="radio" asp-for="@Model.Colors" id="Red" name="Color" value="@Models.Colors.Red">
-                <label for="Red">Red</label>
-            </div>
-            <div>
-                <input type="radio" asp-for="@Model.Colors" id="Yellow" name="Color" value="@Models.Colors.Yellow">
-                <label for="Yellow">Yellow</label>
-            </div>
-            <div>
-                <input type="radio" asp-for="@Model.Colors" id="Blue" name="Color" value="@Models.Colors.Blue">
-                <label for="Blue">Blue</label>
-            </div>
-            <p>----------------------------------------------------</p>
-            <p>Gender:</p>
-            <div>
-                <input type="radio" asp-for="@Model.Gender" id="Male" name="Gender" value="@Models.Gender.Male" checked>
-                <label for="Male">Male</label>
-            </div>
-            <div>
-                <input type="radio" asp-for="@Model.Gender" id="Female" name="Gender" value="@Models.Gender.Female">
-                <label for="Female">Female</label>
-            </div>
-            <div>
-                <input type="radio" asp-for="@Model.Gender" id="Unisex" name="Gender" value="@Models.Gender.Unisex">
-                <label for="Unisex">Unisex</label>
-            </div>
-            <p>----------------------------------------------------</p>
-            <p>Price:</p>
-            <input type="number" asp-for="@Model.Price" placeholder="Price" />
-            <p>----------------------------------------------------</p>
-            <p>Description:</p>
-            <textarea type="text" asp-for="@Model.Description" placeholder="Description" rows="10" cols="60" name="description"></textarea>
-            <p>----------------------------------------------------</p>
-            <p>Stock: </p>
-            <input type="number" asp-for="@Model.Stock" placeholder="Stock" />
-            <p>----------------------------------------------------</p>
-            <p>ImageLink:</p>
-            <input type="text" asp-for="@Model.ImageLink" placeholder="ImageLink" />
-            <p>----------------------------------------------------</p>
-            <input type="hidden" name="input" value="103" placeholder="SubmitAdd" />
-            <button type="submit" class="btn btn-primary" style="height:40px"><p>Add Shoes</p></button>
-        </form>
+<form method="post">
+    <p>Name:</p>
+    <input type="text" asp-for="@Model.Name" placeholder="Name" />
+    <p>----------------------------------------------------</p>
+    <p>Size:</p>
+    <input type="number" asp-for="@Model.Size" placeholder="Size" name="Size" />
+    <p>----------------------------------------------------</p>
+    <p>Color:</p>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Black" name="Color" value="@Models.Colors.Black" checked>
+        <label for="Black">Black</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Red" name="Color" value="@Models.Colors.Red">
+        <label for="Red">Red</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Yellow" name="Color" value="@Models.Colors.Yellow">
+        <label for="Yellow">Yellow</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Blue" name="Color" value="@Models.Colors.Blue">
+        <label for="Blue">Blue</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Brown" name="Color" value="@Models.Colors.Brown">
+        <label for="Brown">Brown</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Green" name="Color" value="@Models.Colors.Green">
+        <label for="Green">Green</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="DarkBlue" name="Color" value="@Models.Colors.DarkBlue">
+        <label for="DarkBlue">DarkBlue</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="White" name="Color" value="@Models.Colors.White">
+        <label for="White">White</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Greyblue" name="Color" value="@Models.Colors.Greyblue">
+        <label for="Greyblue">Greyblue</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Lightblue" name="Color" value="@Models.Colors.Lightblue">
+        <label for="Lightblue">Lightblue</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="PrintedColor" name="Color" value="@Models.Colors.PrintedColor">
+        <label for="PrintedColor">PrintedColor</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="MixedColor" name="Color" value="@Models.Colors.MixedColor">
+        <label for="MixedColor">MixedColor</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Grey" name="Color" value="@Models.Colors.Grey">
+        <label for="Grey">Grey</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Pink" name="Color" value="@Models.Colors.Pink">
+        <label for="Pink">Pink</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Orange" name="Color" value="@Models.Colors.Orange">
+        <label for="Orange">Orange</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Purple" name="Color" value="@Models.Colors.Purple">
+        <label for="Purple">Purple</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="LightBrown" name="Color" value="@Models.Colors.LightBrown">
+        <label for="LightBrown">LightBrown</label>
+    </div>
+    <p>----------------------------------------------------</p>
+    <p>Gender:</p>
+    <div>
+        <input type="radio" asp-for="@Model.Gender" id="Male" name="Gender" value="@Models.Gender.Male" checked>
+        <label for="Male">Male</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Gender" id="Female" name="Gender" value="@Models.Gender.Female">
+        <label for="Female">Female</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Gender" id="Unisex" name="Gender" value="@Models.Gender.Unisex">
+        <label for="Unisex">Unisex</label>
+    </div>
+    <p>----------------------------------------------------</p>
+    <p>Price:</p>
+    <input type="number" asp-for="@Model.Price" placeholder="Price" />
+    <p>----------------------------------------------------</p>
+    <p>Description:</p>
+    <textarea type="text" asp-for="@Model.Description" placeholder="Description" rows="10" cols="60" name="description"></textarea>
+    <p>----------------------------------------------------</p>
+    <p>Stock: </p>
+    <input type="number" asp-for="@Model.Stock" placeholder="Stock" />
+    <p>----------------------------------------------------</p>
+    <p>ImageLink:</p>
+    <input type="text" asp-for="@Model.ImageLink" placeholder="ImageLink" />
+    <p>----------------------------------------------------</p>
+    <input type="hidden" name="input" value="103" placeholder="SubmitAdd" />
+    <button type="submit" class="btn btn-primary" style="height:40px"><p>Add Shoes</p></button>
+</form>
         break;
     case 11: // Formulär för att skapa Underkläder
-        <form method="post">
-            <p>Name:</p>
-            <input type="text" asp-for="@Model.Name" placeholder="Name" />
-            <p>----------------------------------------------------</p>
-            <p>Size:</p>
-            <input type="number" asp-for="@Model.Size" placeholder="Size" name="Size" />
-            <p>----------------------------------------------------</p>
-            <p>Color:</p>
-            <div>
-                <input type="radio" asp-for="@Model.Colors" id="Black" name="Color" value="@Models.Colors.Black" checked>
-                <label for="Black">Black</label>
-            </div>
-            <div>
-                <input type="radio" asp-for="@Model.Colors" id="Red" name="Color" value="@Models.Colors.Red">
-                <label for="Red">Red</label>
-            </div>
-            <div>
-                <input type="radio" asp-for="@Model.Colors" id="Yellow" name="Color" value="@Models.Colors.Yellow">
-                <label for="Yellow">Yellow</label>
-            </div>
-            <div>
-                <input type="radio" asp-for="@Model.Colors" id="Blue" name="Color" value="@Models.Colors.Blue">
-                <label for="Blue">Blue</label>
-            </div>
-            <p>----------------------------------------------------</p>
-            <p>Gender:</p>
-            <div>
-                <input type="radio" asp-for="@Model.Gender" id="Male" name="Gender" value="@Models.Gender.Male" checked>
-                <label for="Male">Male</label>
-            </div>
-            <div>
-                <input type="radio" asp-for="@Model.Gender" id="Female" name="Gender" value="@Models.Gender.Female">
-                <label for="Female">Female</label>
-            </div>
-            <div>
-                <input type="radio" asp-for="@Model.Gender" id="Unisex" name="Gender" value="@Models.Gender.Unisex">
-                <label for="Unisex">Unisex</label>
-            </div>
-            <p>----------------------------------------------------</p>
-            <p>Price:</p>
-            <input type="number" asp-for="@Model.Price" placeholder="Price" />
-            <p>----------------------------------------------------</p>
-            <p>Description:</p>
-            <textarea type="text" asp-for="@Model.Description" placeholder="Description" rows="10" cols="60" name="description"></textarea>
-            <p>----------------------------------------------------</p>
-            <p>Stock: </p>
-            <input type="number" asp-for="@Model.Stock" placeholder="Stock" />
-            <p>----------------------------------------------------</p>
-            <p>Sexyness:</p>
-            <div>
-                <input type="radio" asp-for="@Model.UnderwearSexyness" id="Sexy" name="UnderwearSexyness" value="@Models.UnderwearSexyness.Sexy" checked>
-                <label for="Sexy">Sexy</label>
-            </div>
-            <div>
-                <input type="radio" asp-for="@Model.JacketLenght" id="NotSexy" name="UnderwearSexyness" value="@Models.UnderwearSexyness.NotSexy">
-                <label for="NotSexy">NotSexy</label>
-            </div>
-            <p>----------------------------------------------------</p>
-            <p>ImageLink:</p>
-            <input type="text" asp-for="@Model.ImageLink" placeholder="ImageLink" />
-            <p>----------------------------------------------------</p>
-            <input type="hidden" name="input" value="104" placeholder="SubmitAdd" />
-            <button type="submit" class="btn btn-primary" style="height:40px"><p>Add Underwear</p></button>
-        </form>
+<form method="post">
+    <p>Name:</p>
+    <input type="text" asp-for="@Model.Name" placeholder="Name" />
+    <p>----------------------------------------------------</p>
+    <p>Size:</p>
+    <input type="text" asp-for="@Model.SizeStr" placeholder="Size" />
+    <p>----------------------------------------------------</p>
+    <p>Color:</p>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Black" name="Color" value="@Models.Colors.Black" checked>
+        <label for="Black">Black</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Red" name="Color" value="@Models.Colors.Red">
+        <label for="Red">Red</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Yellow" name="Color" value="@Models.Colors.Yellow">
+        <label for="Yellow">Yellow</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Blue" name="Color" value="@Models.Colors.Blue">
+        <label for="Blue">Blue</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Brown" name="Color" value="@Models.Colors.Brown">
+        <label for="Brown">Brown</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Green" name="Color" value="@Models.Colors.Green">
+        <label for="Green">Green</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="DarkBlue" name="Color" value="@Models.Colors.DarkBlue">
+        <label for="DarkBlue">DarkBlue</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="White" name="Color" value="@Models.Colors.White">
+        <label for="White">White</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Greyblue" name="Color" value="@Models.Colors.Greyblue">
+        <label for="Greyblue">Greyblue</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Lightblue" name="Color" value="@Models.Colors.Lightblue">
+        <label for="Lightblue">Lightblue</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="PrintedColor" name="Color" value="@Models.Colors.PrintedColor">
+        <label for="PrintedColor">PrintedColor</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="MixedColor" name="Color" value="@Models.Colors.MixedColor">
+        <label for="MixedColor">MixedColor</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Grey" name="Color" value="@Models.Colors.Grey">
+        <label for="Grey">Grey</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Pink" name="Color" value="@Models.Colors.Pink">
+        <label for="Pink">Pink</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Orange" name="Color" value="@Models.Colors.Orange">
+        <label for="Orange">Orange</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Purple" name="Color" value="@Models.Colors.Purple">
+        <label for="Purple">Purple</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="LightBrown" name="Color" value="@Models.Colors.LightBrown">
+        <label for="LightBrown">LightBrown</label>
+    </div>
+    <p>----------------------------------------------------</p>
+    <p>Gender:</p>
+    <div>
+        <input type="radio" asp-for="@Model.Gender" id="Male" name="Gender" value="@Models.Gender.Male" checked>
+        <label for="Male">Male</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Gender" id="Female" name="Gender" value="@Models.Gender.Female">
+        <label for="Female">Female</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Gender" id="Unisex" name="Gender" value="@Models.Gender.Unisex">
+        <label for="Unisex">Unisex</label>
+    </div>
+    <p>----------------------------------------------------</p>
+    <p>Price:</p>
+    <input type="number" asp-for="@Model.Price" placeholder="Price" />
+    <p>----------------------------------------------------</p>
+    <p>Description:</p>
+    <textarea type="text" asp-for="@Model.Description" placeholder="Description" rows="10" cols="60" name="description"></textarea>
+    <p>----------------------------------------------------</p>
+    <p>Stock: </p>
+    <input type="number" asp-for="@Model.Stock" placeholder="Stock" />
+    <p>----------------------------------------------------</p>
+    <p>Sexyness:</p>
+    <div>
+        <input type="radio" asp-for="@Model.UnderwearSexyness" id="Sexy" name="UnderwearSexyness" value="@Models.UnderwearSexyness.Sexy" checked>
+        <label for="Sexy">Sexy</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.JacketLenght" id="NotSexy" name="UnderwearSexyness" value="@Models.UnderwearSexyness.NotSexy">
+        <label for="NotSexy">NotSexy</label>
+    </div>
+    <p>----------------------------------------------------</p>
+    <p>ImageLink:</p>
+    <input type="text" asp-for="@Model.ImageLink" placeholder="ImageLink" />
+    <p>----------------------------------------------------</p>
+    <input type="hidden" name="input" value="104" placeholder="SubmitAdd" />
+    <button type="submit" class="btn btn-primary" style="height:40px"><p>Add Underwear</p></button>
+</form>
         break;
     case 12: // Formulär för att ändra produkt
-        <form method="post">
-            <p>Type:</p>
-            <div>
-                <input type="radio" asp-for="@Model.Type" id="Jackets" name="Type" value="Jackets" checked>
-                <label for="Jackets">Jackets</label>
-            </div>
-            <div>
-                <input type="radio" asp-for="@Model.Type" id="Pants" name="Type" value="Pants">
-                <label for="Pants">Pants</label>
-            </div>
-            <div>
-                <input type="radio" asp-for="@Model.Type" id="Shirts" name="Type" value="Shirts">
-                <label for="Shirts">Shirts</label>
-            </div>
-            <div>
-                <input type="radio" asp-for="@Model.Type" id="Shoes" name="Type" value="Shoes">
-                <label for="Shoes">Shoes</label>
-            </div>
-            <div>
-                <input type="radio" asp-for="@Model.Type" id="Underwear" name="Type" value="Underwear">
-                <label for="Underwear">Underwear</label>
-            </div>
-            <p>----------------------------------------------------</p>
-            <p>Name:</p>
-            <input type="text" asp-for="@Model.Name" placeholder="Name" value="@Model.TheProduct.Name" />
-            <p>----------------------------------------------------</p>
-            <p>Size:</p>
-            <input type="number" asp-for="@Model.Size" placeholder="Size" name="Size" />
-            <p>----------------------------------------------------</p>
-            <p>Color:</p>
-            <div>
-                <input type="radio" asp-for="@Model.Colors" id="Black" name="Color" value="@Models.Colors.Black">
-                <label for="Black">Black</label>
-            </div>
-            <div>
-                <input type="radio" asp-for="@Model.Colors" id="Red" name="Color" value="@Models.Colors.Red">
-                <label for="Red">Red</label>
-            </div>
-            <div>
-                <input type="radio" asp-for="@Model.Colors" id="Yellow" name="Color" value="@Models.Colors.Yellow">
-                <label for="Yellow">Yellow</label>
-            </div>
-            <div>
-                <input type="radio" asp-for="@Model.Colors" id="Blue" name="Color" value="@Models.Colors.Blue">
-                <label for="Blue">Blue</label>
-            </div>
-            <p>----------------------------------------------------</p>
-            <p>Gender:</p>
-            <div>
-                <input type="radio" asp-for="@Model.Gender" id="Male" name="Gender" value="@Models.Gender.Male">
-                <label for="Male">Male</label>
-            </div>
-            <div>
-                <input type="radio" asp-for="@Model.Gender" id="Female" name="Gender" value="@Models.Gender.Female">
-                <label for="Female">Female</label>
-            </div>
-            <div>
-                <input type="radio" asp-for="@Model.Gender" id="Unisex" name="Gender" value="@Models.Gender.Unisex">
-                <label for="Unisex">Unisex</label>
-            </div>
-            <p>----------------------------------------------------</p>
-            <p>Price:</p>
-            <input type="number" asp-for="@Model.Price" placeholder="Price" value="@Model.TheProduct.Price" />
-            <p>----------------------------------------------------</p>
-            <p>Description:</p>
-            <textarea type="text" asp-for="@Model.Description" placeholder="Description" rows="10" cols="60" name="description" value="@Model.TheProduct.Description"></textarea>
-            <p>----------------------------------------------------</p>
-            <p>Stock: </p>
-            <input type="number" asp-for="@Model.Stock" placeholder="Stock" />
-            @if (Model.TheProduct is Models.Jackets)
-            {
-                <p>----------------------------------------------------</p>
-                <p>Jacket lenght:</p>
-                <div>
-                    <input type="radio" asp-for="@Model.JacketLenght" id="Long" name="JacketLenght" value="@Models.JacketLenght.Long">
-                    <label for="Long">Long</label>
-                </div>
-                <div>
-                    <input type="radio" asp-for="@Model.JacketLenght" id="Short" name="JacketLenght" value="@Models.JacketLenght.Short">
-                    <label for="Short">Short</label>
-                </div>
-                <div>
-                    <input type="radio" asp-for="@Model.JacketLenght" id="Medium" name="JacketLenght" value="@Models.JacketLenght.Medium">
-                    <label for="Medium">Medium</label>
-                </div>
-            }
-            @if (Model.TheProduct is Models.Underwear)
-            {
-                <p>----------------------------------------------------</p>
-                <p>Sexyness:</p>
-                <div>
-                    <input type="radio" asp-for="@Model.UnderwearSexyness" id="Sexy" name="UnderwearSexyness" value="@Models.UnderwearSexyness.Sexy" checked>
-                    <label for="Sexy">Sexy</label>
-                </div>
-                <div>
-                    <input type="radio" asp-for="@Model.JacketLenght" id="NotSexy" name="UnderwearSexyness" value="@Models.UnderwearSexyness.NotSexy">
-                    <label for="NotSexy">NotSexy</label>
-                </div>
-            }
-            <p>----------------------------------------------------</p>
-            <p>ImageLink:</p>
-            <input type="text" asp-for="@Model.ImageLink" placeholder="ImageLink" value="@Model.TheProduct.ImageLink" />
-            <p>----------------------------------------------------</p>
-            <input type="hidden" name="input" value="107" placeholder="SubmitEdit" />
-            <button type="submit" class="btn btn-primary" style="height:40px"><p>Edit Jacket</p></button>
-        </form>
+<form method="post">
+    <p>Type:</p>
+    <div>
+        <input type="radio" asp-for="@Model.Type" id="Jackets" name="Type" value="Jackets" checked>
+        <label for="Jackets">Jackets</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Type" id="Pants" name="Type" value="Pants">
+        <label for="Pants">Pants</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Type" id="Shirts" name="Type" value="Shirts">
+        <label for="Shirts">Shirts</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Type" id="Shoes" name="Type" value="Shoes">
+        <label for="Shoes">Shoes</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Type" id="Underwear" name="Type" value="Underwear">
+        <label for="Underwear">Underwear</label>
+    </div>
+    <p>----------------------------------------------------</p>
+    <p>Name:</p>
+    <input type="text" asp-for="@Model.Name" placeholder="Name" value="@Model.TheProduct.Name" />
+    <p>----------------------------------------------------</p>
+    <p>Size number:</p>
+    <input type="number" asp-for="@Model.Size" placeholder="Size" name="Size" />
+    <p>----------------------------------------------------</p>
+    <p>Size text:</p>
+    <input type="text" asp-for="@Model.SizeStr" placeholder="Size" />
+    <p>----------------------------------------------------</p>
+    <p>Color:</p>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Black" name="Color" value="@Models.Colors.Black">
+        <label for="Black">Black</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Red" name="Color" value="@Models.Colors.Red">
+        <label for="Red">Red</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Yellow" name="Color" value="@Models.Colors.Yellow">
+        <label for="Yellow">Yellow</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Blue" name="Color" value="@Models.Colors.Blue">
+        <label for="Blue">Blue</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Brown" name="Color" value="@Models.Colors.Brown">
+        <label for="Brown">Brown</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Green" name="Color" value="@Models.Colors.Green">
+        <label for="Green">Green</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="DarkBlue" name="Color" value="@Models.Colors.DarkBlue">
+        <label for="DarkBlue">DarkBlue</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="White" name="Color" value="@Models.Colors.White">
+        <label for="White">White</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Greyblue" name="Color" value="@Models.Colors.Greyblue">
+        <label for="Greyblue">Greyblue</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Lightblue" name="Color" value="@Models.Colors.Lightblue">
+        <label for="Lightblue">Lightblue</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="PrintedColor" name="Color" value="@Models.Colors.PrintedColor">
+        <label for="PrintedColor">PrintedColor</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="MixedColor" name="Color" value="@Models.Colors.MixedColor">
+        <label for="MixedColor">MixedColor</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Grey" name="Color" value="@Models.Colors.Grey">
+        <label for="Grey">Grey</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Pink" name="Color" value="@Models.Colors.Pink">
+        <label for="Pink">Pink</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Orange" name="Color" value="@Models.Colors.Orange">
+        <label for="Orange">Orange</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Purple" name="Color" value="@Models.Colors.Purple">
+        <label for="Purple">Purple</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="LightBrown" name="Color" value="@Models.Colors.LightBrown">
+        <label for="LightBrown">LightBrown</label>
+    </div>
+    <p>----------------------------------------------------</p>
+    <p>Gender:</p>
+    <div>
+        <input type="radio" asp-for="@Model.Gender" id="Male" name="Gender" value="@Models.Gender.Male">
+        <label for="Male">Male</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Gender" id="Female" name="Gender" value="@Models.Gender.Female">
+        <label for="Female">Female</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Gender" id="Unisex" name="Gender" value="@Models.Gender.Unisex">
+        <label for="Unisex">Unisex</label>
+    </div>
+    <p>----------------------------------------------------</p>
+    <p>Price:</p>
+    <input type="number" asp-for="@Model.Price" placeholder="Price" value="@Model.TheProduct.Price" />
+    <p>----------------------------------------------------</p>
+    <p>Description:</p>
+    <textarea type="text" asp-for="@Model.Description" placeholder="Description" rows="10" cols="60" name="description" value="@Model.TheProduct.Description"></textarea>
+    <p>----------------------------------------------------</p>
+    <p>Stock: </p>
+    <input type="number" asp-for="@Model.Stock" placeholder="Stock" />
+    @if (Model.TheProduct is Models.Jackets)
+    {
+        <p>----------------------------------------------------</p>
+        <p>Jacket lenght:</p>
+        <div>
+            <input type="radio" asp-for="@Model.JacketLenght" id="Long" name="JacketLenght" value="@Models.JacketLenght.Long">
+            <label for="Long">Long</label>
+        </div>
+        <div>
+            <input type="radio" asp-for="@Model.JacketLenght" id="Short" name="JacketLenght" value="@Models.JacketLenght.Short">
+            <label for="Short">Short</label>
+        </div>
+        <div>
+            <input type="radio" asp-for="@Model.JacketLenght" id="Medium" name="JacketLenght" value="@Models.JacketLenght.Medium">
+            <label for="Medium">Medium</label>
+        </div>
+    }
+    @if (Model.TheProduct is Models.Underwear)
+    {
+        <p>----------------------------------------------------</p>
+        <p>Sexyness:</p>
+        <div>
+            <input type="radio" asp-for="@Model.UnderwearSexyness" id="Sexy" name="UnderwearSexyness" value="@Models.UnderwearSexyness.Sexy" checked>
+            <label for="Sexy">Sexy</label>
+        </div>
+        <div>
+            <input type="radio" asp-for="@Model.JacketLenght" id="NotSexy" name="UnderwearSexyness" value="@Models.UnderwearSexyness.NotSexy">
+            <label for="NotSexy">NotSexy</label>
+        </div>
+    }
+    <p>----------------------------------------------------</p>
+    <p>ImageLink:</p>
+    <input type="text" asp-for="@Model.ImageLink" placeholder="ImageLink" value="@Model.TheProduct.ImageLink" />
+    <p>----------------------------------------------------</p>
+    <input type="hidden" name="input" value="107" placeholder="SubmitEdit" />
+    <button type="submit" class="btn btn-primary" style="height:40px"><p>Edit Jacket</p></button>
+</form>
         break;
     case 13:
         <h1>Products added</h1>
@@ -584,6 +899,5 @@
     case 130:
         <p>@Data.ProductManager.AddProductResponse</p>
         break;
-
 }
 

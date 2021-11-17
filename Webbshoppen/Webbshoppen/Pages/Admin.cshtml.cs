@@ -25,6 +25,7 @@ namespace Webbshoppen.Pages
         public Colors Colors { get; set; }
         public Gender Gender { get; set; }
         public int Size { get; set; }
+        public string SizeStr { get; set; }
         public JacketLenght JacketLenght { get; set; }
         public UnderwearSexyness UnderwearSexyness { get; set; }
         public void OnGet()
@@ -41,7 +42,7 @@ namespace Webbshoppen.Pages
             {
                 if (ModelState.IsValid) 
                 {
-                    Product temp = new Jackets(ProductManager.ProductList.Count, Size, Colors, Gender, Name, Price, Description, Stock, JacketLenght, ImageLink);
+                    Product temp = new Jackets(ProductManager.ProductList.Count, SizeStr, Colors, Gender, Name, Price, Description, Stock, JacketLenght, ImageLink);
                     ProductManager.ProductList.Add(temp);
                     ProductManager.PostProduct(temp);
                     CState = 100; 
@@ -67,7 +68,7 @@ namespace Webbshoppen.Pages
             { 
                 if (ModelState.IsValid) 
                 {
-                    Product temp = new Shirts(ProductManager.ProductList.Count, Size, Colors, Gender, Name, Price, Description, Stock, ImageLink);
+                    Product temp = new Shirts(ProductManager.ProductList.Count, SizeStr, Colors, Gender, Name, Price, Description, Stock, ImageLink);
                     ProductManager.ProductList.Add(temp);
                     ProductManager.PostProduct(temp);
                     CState = 100;
@@ -93,7 +94,7 @@ namespace Webbshoppen.Pages
             { 
                 if (ModelState.IsValid) 
                 {
-                    Product temp = new Underwear(ProductManager.ProductList.Count, Size, Colors, Gender, Name, Price, Description, Stock, UnderwearSexyness, ImageLink);
+                    Product temp = new Underwear(ProductManager.ProductList.Count, SizeStr, Colors, Gender, Name, Price, Description, Stock, UnderwearSexyness, ImageLink);
                     ProductManager.ProductList.Add(temp);
                     ProductManager.PostProduct(temp);
                     CState = 100;
@@ -109,11 +110,11 @@ namespace Webbshoppen.Pages
                 if (ModelState.IsValid)
                 {
                     ProductManager.ProductList.RemoveAll(p => p.ProductId == ProductManager.TempProductId);
-                    if (Type == "Jackets") { ProductManager.ProductList.Add(new Jackets(ProductManager.TempProductId, Size, Colors, Gender, Name, Price, Description, Stock, JacketLenght, ImageLink)); }
+                    if (Type == "Jackets") { ProductManager.ProductList.Add(new Jackets(ProductManager.TempProductId, SizeStr, Colors, Gender, Name, Price, Description, Stock, JacketLenght, ImageLink)); }
                     if (Type == "Pants") { ProductManager.ProductList.Add(new Pants(ProductManager.TempProductId, Size, Colors, Gender, Name, Price, Description, Stock, ImageLink)); }
-                    if (Type == "Shirts") { ProductManager.ProductList.Add(new Shirts(ProductManager.TempProductId, Size, Colors, Gender, Name, Price, Description, Stock, ImageLink)); }
+                    if (Type == "Shirts") { ProductManager.ProductList.Add(new Shirts(ProductManager.TempProductId, SizeStr, Colors, Gender, Name, Price, Description, Stock, ImageLink)); }
                     if (Type == "Shoes") { ProductManager.ProductList.Add(new Shoes(ProductManager.TempProductId, Size, Colors, Gender, Name, Price, Description, Stock, ImageLink)); }
-                    if (Type == "Underwear") { ProductManager.ProductList.Add(new Underwear(ProductManager.TempProductId, Size, Colors, Gender, Name, Price, Description, Stock, UnderwearSexyness, ImageLink)); }
+                    if (Type == "Underwear") { ProductManager.ProductList.Add(new Underwear(ProductManager.TempProductId, SizeStr, Colors, Gender, Name, Price, Description, Stock, UnderwearSexyness, ImageLink)); }
                     if (ProductManager.TempProductId < ProductManager.ProductList.Count) { CState = 105; }
                     else { CState = 106; }
                 }

@@ -12,22 +12,20 @@ namespace Webbshoppen.Pages
     public class ViewSalesProductModel : PageModel
     {
         public Product TheProduct { get; set; }
-        public int NumberOfItems { get; set; }
-        public int ProductId { get; set; }
 
         public void OnGet(int productId)
         {
-            ProductId = productId;
-            TheProduct = ProductManager.SalesList[productId];
+            ProductManager.TempProductId = productId;
+            TheProduct = ProductManager.SalesList[ProductManager.TempProductId];
         }
         public IActionResult OnPost(int input)
         {
-            if (ProductManager.SalesList[ProductId].Stock >= input)
+            if (ProductManager.SalesList[ProductManager.TempProductId].Stock >= input)
             {
                 for (int i = 0; i < input; i++)
                 {
-                    ProductManager.Cart.Add(ProductManager.SalesList[ProductId]);
-                    ProductManager.SalesList[ProductId].Stock--;
+                    ProductManager.Cart.Add(ProductManager.SalesList[ProductManager.TempProductId]);
+                    ProductManager.SalesList[ProductManager.TempProductId].Stock--;
                 }
             }
             return RedirectToPage("/ViewCart");
