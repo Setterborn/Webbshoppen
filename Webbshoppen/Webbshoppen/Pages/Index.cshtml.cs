@@ -5,7 +5,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-//Skriva class som det ska hämtas från!
+using Webbshoppen.Data;
+
 
 namespace Webbshoppen.Pages
 {
@@ -13,7 +14,9 @@ namespace Webbshoppen.Pages
     {
         [BindProperty(SupportsGet = true)]
         public string FindProduct { get; set; }
+
         public int Index { get; set; }
+
         public string ShopName { get; set; }
         public void OnGet(int index)
         {
