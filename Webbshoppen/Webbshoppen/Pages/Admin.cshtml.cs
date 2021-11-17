@@ -36,11 +36,72 @@ namespace Webbshoppen.Pages
             if (input < 100) { CState = input; }
             if (input == 12) { ProductManager.TempProductId = ProductId; TheProduct = ProductManager.ProductList[ProductManager.TempProductId];}
             if (input == 13) { ProductManager.GetRandomSalesProduct(); }
-            else if (input == 100) { if (ModelState.IsValid) { ProductManager.ProductList.Add(new Jackets(ProductManager.ProductList.Count, Size, Colors, Gender, Name, Price, Description, Stock, JacketLenght, ImageLink)); CState = 100; } else { CState = 101; } }
-            else if (input == 101) { if (ModelState.IsValid) { ProductManager.ProductList.Add(new Pants(ProductManager.ProductList.Count, Size, Colors, Gender, Name, Price, Description, Stock, ImageLink)); CState = 100; } else { CState = 101; } }
-            else if (input == 102) { if (ModelState.IsValid) { ProductManager.ProductList.Add(new Shirts(ProductManager.ProductList.Count, Size, Colors, Gender, Name, Price, Description, Stock, ImageLink)); CState = 100; } else { CState = 101; } }
-            else if (input == 103) { if (ModelState.IsValid) { ProductManager.ProductList.Add(new Shoes(ProductManager.ProductList.Count, Size, Colors, Gender, Name, Price, Description, Stock, ImageLink)); CState = 100; } else { CState = 101; } }
-            else if (input == 104) { if (ModelState.IsValid) { ProductManager.ProductList.Add(new Underwear(ProductManager.ProductList.Count, Size, Colors, Gender, Name, Price, Description, Stock, UnderwearSexyness, ImageLink)); CState = 100; } else { CState = 101; } }
+            if (input == 14) { ProductManager.ProductList = ProductManager.GetProductList(); }
+            else if (input == 100) 
+            {
+                if (ModelState.IsValid) 
+                {
+                    Product temp = new Jackets(ProductManager.ProductList.Count, Size, Colors, Gender, Name, Price, Description, Stock, JacketLenght, ImageLink);
+                    ProductManager.ProductList.Add(temp);
+                    ProductManager.PostProduct(temp);
+                    CState = 100; 
+                } else 
+                { 
+                    CState = 101; 
+                } 
+            }
+            else if (input == 101) 
+            { 
+                if (ModelState.IsValid) 
+                {
+                    Product temp = new Pants(ProductManager.ProductList.Count, Size, Colors, Gender, Name, Price, Description, Stock, ImageLink);
+                    ProductManager.ProductList.Add(temp);
+                    ProductManager.PostProduct(temp);
+                    CState = 100; 
+                } else 
+                { 
+                    CState = 101;
+                } 
+            }
+            else if (input == 102) 
+            { 
+                if (ModelState.IsValid) 
+                {
+                    Product temp = new Shirts(ProductManager.ProductList.Count, Size, Colors, Gender, Name, Price, Description, Stock, ImageLink);
+                    ProductManager.ProductList.Add(temp);
+                    ProductManager.PostProduct(temp);
+                    CState = 100;
+                } else 
+                { 
+                    CState = 101;
+                } 
+            }
+            else if (input == 103) 
+            { 
+                if (ModelState.IsValid) 
+                {
+                    Product temp = new Shoes(ProductManager.ProductList.Count, Size, Colors, Gender, Name, Price, Description, Stock, ImageLink);
+                    ProductManager.ProductList.Add(temp);
+                    ProductManager.PostProduct(temp);
+                    CState = 100; 
+                } else 
+                { 
+                    CState = 101;
+                }
+            }
+            else if (input == 104) 
+            { 
+                if (ModelState.IsValid) 
+                {
+                    Product temp = new Underwear(ProductManager.ProductList.Count, Size, Colors, Gender, Name, Price, Description, Stock, UnderwearSexyness, ImageLink);
+                    ProductManager.ProductList.Add(temp);
+                    ProductManager.PostProduct(temp);
+                    CState = 100;
+                } else 
+                { 
+                    CState = 101; 
+                } 
+            }
             else if (input == 105) { if (ModelState.IsValid) { ProductManager.ProductList.RemoveAll(p => p.ProductId == ProductId); if (ProductId < ProductManager.ProductList.Count) { CState = 102; } else { CState = 103; } } }
             else if (input == 106) { ProductManager.Discount = Discount; ProductManager.UpdateSalesList(); CState = 104; }
             else if (input == 107)

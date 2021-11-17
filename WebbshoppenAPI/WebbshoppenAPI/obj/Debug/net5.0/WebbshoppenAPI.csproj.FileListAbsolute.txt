@@ -117,3 +117,4 @@ C:\Users\sette\Desktop\webbshoppen\Webbshoppen\WebbshoppenAPI\WebbshoppenAPI\obj
 C:\Users\sette\Desktop\webbshoppen\Webbshoppen\WebbshoppenAPI\WebbshoppenAPI\obj\Debug\net5.0\ref\WebbshoppenAPI.dll
 C:\Users\sette\Desktop\webbshoppen\Webbshoppen\WebbshoppenAPI\WebbshoppenAPI\obj\Debug\net5.0\WebbshoppenAPI.pdb
 C:\Users\sette\Desktop\webbshoppen\Webbshoppen\WebbshoppenAPI\WebbshoppenAPI\obj\Debug\net5.0\WebbshoppenAPI.genruntimeconfig.cache
+C:\Users\sette\Desktop\webbshoppen\Webbshoppen\WebbshoppenAPI\WebbshoppenAPI\bin\Debug\net5.0\WebbshoppenAPI.Views.dll

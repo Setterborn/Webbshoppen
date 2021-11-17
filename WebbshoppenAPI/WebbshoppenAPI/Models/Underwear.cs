@@ -23,5 +23,8 @@ namespace WebbshoppenAPI.Models
             UnderwearSexyness = underwearSexyness;
             ImageLink = imageLink;
         }
+        public Underwear()
+        {
+        }
     }
 }

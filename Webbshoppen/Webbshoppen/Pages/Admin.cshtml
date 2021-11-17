@@ -8,43 +8,49 @@
         <div class="container" style="padding:20px">
             <form method="post">
                 <input type="hidden" name="input" value="1" placeholder="Add" />
-                <button type="submit" class="btn btn-primary" style="height:40px"><p>Add Product</p></button>
+                <button type="submit" class="btn btn-primary" style="height:40px"><p>Add Product (local and API)</p></button>
             </form>
         </div>
         <div class="container" style="padding:20px">
             <form method="post">
                 <input type="hidden" name="input" value="2" placeholder="Remove" />
-                <button type="submit" class="btn btn-primary" style="height:40px"><p>Remove Product</p></button>
+                <button type="submit" class="btn btn-primary" style="height:40px"><p>Remove Product(local)</p></button>
             </form>
         </div>
         <div class="container" style="padding:20px">
             <form method="post">
                 <input type="hidden" name="input" value="3" placeholder="Edit" />
-                <button type="submit" class="btn btn-primary" style="height:40px"><p>Edit Product</p></button>
+                <button type="submit" class="btn btn-primary" style="height:40px"><p>Edit Product(local)</p></button>
             </form>
         </div>
         <div class="container" style="padding:20px">
             <form method="post">
                 <input type="hidden" name="input" value="4" placeholder="AddSale" />
-                <button type="submit" class="btn btn-primary" style="height:40px"><p>Add Sale Product</p></button>
+                <button type="submit" class="btn btn-primary" style="height:40px"><p>Add Sale Product(local)</p></button>
             </form>
         </div>
         <div class="container" style="padding:20px">
             <form method="post">
                 <input type="hidden" name="input" value="5" placeholder="RemoveSale" />
-                <button type="submit" class="btn btn-primary" style="height:40px"><p>Remove Sale Product</p></button>
+                <button type="submit" class="btn btn-primary" style="height:40px"><p>Remove Sale Product(local)</p></button>
             </form>
         </div>
         <div class="container" style="padding:20px">
             <form method="post">
                 <input type="hidden" name="input" value="6" placeholder="EditSale" />
-                <button type="submit" class="btn btn-primary" style="height:40px"><p>Edit Sale %</p></button>
+                <button type="submit" class="btn btn-primary" style="height:40px"><p>Edit Sale %(local)</p></button>
             </form>
         </div>
         <div class="container" style="padding:20px">
             <form method="post">
                 <input type="hidden" name="input" value="13" placeholder="GetDiscountProducts" />
-                <button type="submit" class="btn btn-primary" style="height:40px"><p>Get random discount products</p></button>
+                <button type="submit" class="btn btn-primary" style="height:40px"><p>Get random discount products(local)</p></button>
+            </form>
+        </div>
+        <div class="container" style="padding:20px">
+            <form method="post">
+                <input type="hidden" name="input" value="14" placeholder="GetDiscountProducts" />
+                <button type="submit" class="btn btn-primary" style="height:40px"><p>Get product list from API</p></button>
             </form>
         </div>
         break;
@@ -535,6 +541,10 @@
         <h1>Products added</h1>
         <meta http-equiv="refresh" content="1; URL=/Admin" />
         break;
+    case 14:
+        <h1>Productlist succesfully loaded</h1>
+        <meta http-equiv="refresh" content="1; URL=/Admin" />
+        break;
     case 100:
         <h1>Product succesfully added</h1>
         <meta http-equiv="refresh" content="1; URL=/Admin" />
@@ -570,6 +580,9 @@
     case 108:
         <h1>Product removed from saleslist</h1>
         <meta http-equiv="refresh" content="1; URL=/Admin" />
+        break;
+    case 130:
+        <p>@Data.ProductManager.AddProductResponse</p>
         break;
 
 }

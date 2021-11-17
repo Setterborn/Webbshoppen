@@ -1,6 +1,9 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using WebbshoppenAPI.Models;
 
@@ -8,13 +11,13 @@ namespace WebbshoppenAPI.Data
 {
     public class ProductManager
     {
-        public List<Product> ProductList { get; set; }
+        public static string Path { get; set; } = @"c:\webbshoppenTemp.txt";
+        public static int TempProductId { get; set; }
+        public static List<Product> Products { get; set; } = new();
 
 
-        public static List<Product> GetProducts()
+        public static void GenerateProducts()
         {
-            List<Product> Products = new();
-
             //Pants
             // public Pants(int size, Colors color, Gender gender, string name, double price, string description, int stock,string imageLink)
 
@@ -55,7 +58,38 @@ namespace WebbshoppenAPI.Data
             Products.Add(new Underwear(18,42, Colors.Black, Gender.Unisex, "Vit tröja", 199, "En ful tröja", 10, UnderwearSexyness.NotSexy, "/link"));
             Products.Add(new Underwear(19,42, Colors.Black, Gender.Unisex, "Vit tröja", 199, "En ful tröja", 10, UnderwearSexyness.NotSexy, "/link"));
 
-            return Products;
+
+        }
+
+        public static void WriteToFile(Product productToAdd)
+        {
+            JsonSerializerSettings settings = new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.All };
+            string tempProduct = JsonConvert.SerializeObject(productToAdd, settings);
+            using (StreamWriter sw = File.AppendText(Path))
+            {
+                sw.WriteLine(tempProduct);
+            }
+        }
+        public static void ReadFromFile()
+        {
+            if (File.Exists(Path))
+            {
+                using (StreamReader sr = new StreamReader(Path))
+                {
+                    string[] myString = { "" };
+                    while (sr.Peek() > 0)
+                    {
+                        string line = sr.ReadLine();
+                        for (int i = 0; i < myString.Length; i++)
+                        {
+                            string tempStr = line;
+                            JsonSerializerSettings settings = new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.Auto };
+                            Product tempProd = JsonConvert.DeserializeObject<Product>(tempStr, settings);
+                            ProductManager.Products.Add(tempProd);
+                        }
+                    }
+                }
+            } 
         }
     }
 }

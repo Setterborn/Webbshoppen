@@ -5,9 +5,10 @@
     "\\WebbshoppenAPI",
     "\\WebbshoppenAPI\\WebbshoppenAPI",
     "\\WebbshoppenAPI\\WebbshoppenAPI\\Controllers",
+    "\\WebbshoppenAPI\\WebbshoppenAPI\\Data",
     "\\Webbshoppen\\Webbshoppen",
     "\\Webbshoppen\\Webbshoppen\\Pages"
   ],
-  "SelectedNode": "\\WebbshoppenAPI\\WebbshoppenAPI\\Controllers\\ProductsController.cs",
+  "SelectedNode": "\\WebbshoppenAPI\\WebbshoppenAPI\\Data\\ProductManager.cs",
   "PreviewInSolutionExplorer": false
 }
