@@ -5,55 +5,75 @@
 @switch (currentstate)
 {
     case 0:
-        <form method="post">
-            <input type="hidden" name="input" value="1" placeholder="Add" />
-            <button type="submit" class="btn btn-primary"><p>Add Product</p></button>
-        </form>
-        <form method="post">
-            <input type="hidden" name="input" value="2" placeholder="Remove" />
-            <button type="submit" class="btn btn-primary"><p>Remove Product</p></button>
-        </form>
-        <form method="post">
-            <input type="hidden" name="input" value="3" placeholder="Edit" />
-            <button type="submit" class="btn btn-primary"><p>Edit Product</p></button>
-        </form>
-        <form method="post">
-            <input type="hidden" name="input" value="4" placeholder="AddSale" />
-            <button type="submit" class="btn btn-primary"><p>Add Sale Product</p></button>
-        </form>
-        <form method="post">
-            <input type="hidden" name="input" value="5" placeholder="RemoveSale" />
-            <button type="submit" class="btn btn-primary"><p>Remove Sale Product</p></button>
-        </form>
-        <form method="post">
-            <input type="hidden" name="input" value="6" placeholder="EditSale" />
-            <button type="submit" class="btn btn-primary"><p>Edit Sale %</p></button>
-        </form>
-        <form method="post">
-            <input type="hidden" name="input" value="13" placeholder="GetDiscountProducts" />
-            <button type="submit" class="btn btn-primary"><p>Get random discount products</p></button>
-        </form>
+        <div class="container" style="padding:20px">
+            <form method="post">
+                <input type="hidden" name="input" value="1" placeholder="Add" />
+                <button type="submit" class="btn btn-primary" style="height:40px"><p>Add Product (local and API)</p></button>
+            </form>
+        </div>
+        <div class="container" style="padding:20px">
+            <form method="post">
+                <input type="hidden" name="input" value="2" placeholder="Remove" />
+                <button type="submit" class="btn btn-primary" style="height:40px"><p>Remove Product(local)</p></button>
+            </form>
+        </div>
+        <div class="container" style="padding:20px">
+            <form method="post">
+                <input type="hidden" name="input" value="3" placeholder="Edit" />
+                <button type="submit" class="btn btn-primary" style="height:40px"><p>Edit Product(local)</p></button>
+            </form>
+        </div>
+        <div class="container" style="padding:20px">
+            <form method="post">
+                <input type="hidden" name="input" value="4" placeholder="AddSale" />
+                <button type="submit" class="btn btn-primary" style="height:40px"><p>Add Sale Product(local)</p></button>
+            </form>
+        </div>
+        <div class="container" style="padding:20px">
+            <form method="post">
+                <input type="hidden" name="input" value="5" placeholder="RemoveSale" />
+                <button type="submit" class="btn btn-primary" style="height:40px"><p>Remove Sale Product(local)</p></button>
+            </form>
+        </div>
+        <div class="container" style="padding:20px">
+            <form method="post">
+                <input type="hidden" name="input" value="6" placeholder="EditSale" />
+                <button type="submit" class="btn btn-primary" style="height:40px"><p>Edit Sale %(local)</p></button>
+            </form>
+        </div>
+        <div class="container" style="padding:20px">
+            <form method="post">
+                <input type="hidden" name="input" value="13" placeholder="GetDiscountProducts" />
+                <button type="submit" class="btn btn-primary" style="height:40px"><p>Get random discount products(local)</p></button>
+            </form>
+        </div>
+        <div class="container" style="padding:20px">
+            <form method="post">
+                <input type="hidden" name="input" value="14" placeholder="GetDiscountProducts" />
+                <button type="submit" class="btn btn-primary" style="height:40px"><p>Get product list from API</p></button>
+            </form>
+        </div>
         break;
     case 1:
         <form method="post">
             <input type="hidden" name="input" value="7" placeholder="Jackets" />
-            <button type="submit" class="btn btn-primary"><p>Jackets</p></button>
+            <button type="submit" class="btn btn-primary" style="height:40px"><p>Jackets</p></button>
         </form>
         <form method="post">
             <input type="hidden" name="input" value="8" placeholder="Pants" />
-            <button type="submit" class="btn btn-primary"><p>Pants</p></button>
+            <button type="submit" class="btn btn-primary" style="height:40px"><p>Pants</p></button>
         </form>
         <form method="post">
             <input type="hidden" name="input" value="9" placeholder="Shirts" />
-            <button type="submit" class="btn btn-primary"><p>Shirts</p></button>
+            <button type="submit" class="btn btn-primary" style="height:40px"><p>Shirts</p></button>
         </form>
         <form method="post">
             <input type="hidden" name="input" value="10" placeholder="Shoes" />
-            <button type="submit" class="btn btn-primary"><p>Shoes</p></button>
+            <button type="submit" class="btn btn-primary" style="height:40px"><p>Shoes</p></button>
         </form>
         <form method="post">
             <input type="hidden" name="input" value="11" placeholder="Underwear" />
-            <button type="submit" class="btn btn-primary"><p>Underwear</p></button>
+            <button type="submit" class="btn btn-primary" style="height:40px"><p>Underwear</p></button>
         </form>
         break;
     case 2:
@@ -62,7 +82,7 @@
             <input type="number" asp-for="@Model.ProductId" placeholder="ProductId" name="ProductId" />
 
             <input type="hidden" name="input" value="105" placeholder="SubmitRemove" />
-            <button type="submit" class="btn btn-primary"><p>Remove product</p></button>
+            <button type="submit" class="btn btn-primary" style="height:40px"><p>Remove product</p></button>
         </form>
         break;
     case 3:
@@ -71,7 +91,7 @@
             <input type="number" asp-for="@Model.ProductId" placeholder="ProductId" name="ProductId" />
 
             <input type="hidden" name="input" value="12" placeholder="SubmitEdit" />
-            <button type="submit" class="btn btn-primary"><p>Edit product</p></button>
+            <button type="submit" class="btn btn-primary" style="height:40px"><p>Edit product</p></button>
         </form>
         break;
     case 4:
@@ -80,7 +100,7 @@
             <input type="number" asp-for="@Model.ProductId" placeholder="ProductId" name="ProductId" />
 
             <input type="hidden" name="input" value="108" placeholder="SubmitAddSale" />
-            <button type="submit" class="btn btn-primary"><p>Add sale product</p></button>
+            <button type="submit" class="btn btn-primary" style="height:40px"><p>Add sale product</p></button>
         </form>
         break;
     case 5:
@@ -89,9 +109,9 @@
             <input type="number" asp-for="@Model.ProductId" placeholder="ProductId" name="ProductId" />
 
             <input type="hidden" name="input" value="109" placeholder="SubmitRemoveSale" />
-            <button type="submit" class="btn btn-primary"><p>Remove sale product</p></button>
+            <button type="submit" class="btn btn-primary" style="height:40px"><p>Remove sale product</p></button>
         </form>
-        @foreach (Models.Product prod in Data.ProductManager.SalesList) 
+        @foreach (Models.Product prod in Data.ProductManager.SalesList)
         {
             <h5>@prod.ProductId - @prod.Name</h5>
         }
@@ -102,7 +122,7 @@
             <input type="number" asp-for="@Model.Discount" placeholder="Discount" name="Discount" />
 
             <input type="hidden" name="input" value="106" placeholder="SubmitAdd" />
-            <button type="submit" class="btn btn-primary"><p>Adjust discount</p></button>
+            <button type="submit" class="btn btn-primary" style="height:40px"><p>Adjust discount</p></button>
         </form>
         break;
     case 7: // Formulär för att skapa Jacka
@@ -172,7 +192,7 @@
             <input type="text" asp-for="@Model.ImageLink" placeholder="ImageLink" />
             <p>----------------------------------------------------</p>
             <input type="hidden" name="input" value="100" placeholder="SubmitAdd" />
-            <button type="submit" class="btn btn-primary"><p>Add Jacket</p></button>
+            <button type="submit" class="btn btn-primary" style="height:40px"><p>Add Jacket</p></button>
         </form>
         break;
     case 8: // Formulär för att skapa Byxor
@@ -228,7 +248,7 @@
             <input type="text" asp-for="@Model.ImageLink" placeholder="ImageLink" />
             <p>----------------------------------------------------</p>
             <input type="hidden" name="input" value="101" placeholder="SubmitAdd" />
-            <button type="submit" class="btn btn-primary"><p>Add Pants</p></button>
+            <button type="submit" class="btn btn-primary" style="height:40px"><p>Add Pants</p></button>
         </form>
         break;
     case 9: // Formulär för att skapa Tröja
@@ -284,7 +304,7 @@
             <input type="text" asp-for="@Model.ImageLink" placeholder="ImageLink" />
             <p>----------------------------------------------------</p>
             <input type="hidden" name="input" value="102" placeholder="SubmitAdd" />
-            <button type="submit" class="btn btn-primary"><p>Add Shirt</p></button>
+            <button type="submit" class="btn btn-primary" style="height:40px"><p>Add Shirt</p></button>
         </form>
         break;
     case 10: // Formulär för att skapa Skor
@@ -340,7 +360,7 @@
             <input type="text" asp-for="@Model.ImageLink" placeholder="ImageLink" />
             <p>----------------------------------------------------</p>
             <input type="hidden" name="input" value="103" placeholder="SubmitAdd" />
-            <button type="submit" class="btn btn-primary"><p>Add Shoes</p></button>
+            <button type="submit" class="btn btn-primary" style="height:40px"><p>Add Shoes</p></button>
         </form>
         break;
     case 11: // Formulär för att skapa Underkläder
@@ -406,7 +426,7 @@
             <input type="text" asp-for="@Model.ImageLink" placeholder="ImageLink" />
             <p>----------------------------------------------------</p>
             <input type="hidden" name="input" value="104" placeholder="SubmitAdd" />
-            <button type="submit" class="btn btn-primary"><p>Add Underwear</p></button>
+            <button type="submit" class="btn btn-primary" style="height:40px"><p>Add Underwear</p></button>
         </form>
         break;
     case 12: // Formulär för att ändra produkt
@@ -514,11 +534,15 @@
             <input type="text" asp-for="@Model.ImageLink" placeholder="ImageLink" value="@Model.TheProduct.ImageLink" />
             <p>----------------------------------------------------</p>
             <input type="hidden" name="input" value="107" placeholder="SubmitEdit" />
-            <button type="submit" class="btn btn-primary"><p>Edit Jacket</p></button>
+            <button type="submit" class="btn btn-primary" style="height:40px"><p>Edit Jacket</p></button>
         </form>
         break;
     case 13:
         <h1>Products added</h1>
+        <meta http-equiv="refresh" content="1; URL=/Admin" />
+        break;
+    case 14:
+        <h1>Productlist succesfully loaded</h1>
         <meta http-equiv="refresh" content="1; URL=/Admin" />
         break;
     case 100:
@@ -556,6 +580,9 @@
     case 108:
         <h1>Product removed from saleslist</h1>
         <meta http-equiv="refresh" content="1; URL=/Admin" />
+        break;
+    case 130:
+        <p>@Data.ProductManager.AddProductResponse</p>
         break;
 
 }

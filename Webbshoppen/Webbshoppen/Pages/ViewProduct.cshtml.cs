@@ -13,7 +13,6 @@ namespace Webbshoppen.Pages
     public class ViewProductModel : PageModel
     {
         public Product TheProduct { get; set; }
-        public int NumberOfItems { get; set; }
         public int ProductId { get; set; }
 
         public void OnGet(int productId)

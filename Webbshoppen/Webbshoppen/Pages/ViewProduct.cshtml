@@ -8,7 +8,7 @@
         <img src="@Model.TheProduct.ImageLink." class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">@Model.TheProduct.Name</h5>
-            <p class="card-text">@Model.TheProduct.Price Sek</p>
+            <p class="card-text">@(Math.Round(Model.TheProduct.Price*1.25)) Sek</p>
             <p class="card-text">In stock: @Model.TheProduct.Stock </p>
             @if (Model.TheProduct is Models.Jackets)
             {
@@ -40,7 +40,7 @@
             <p>__________________________________________________________________________________________________________________</p>
             <form method="post">
                 <input type="number" name="input" value="number" placeholder="pcs" />
-                <button type="submit" class="btn btn-outline-secondary"><p>Add to cart</p></button>
+                <button type="submit" class="btn btn-primary" style="height:40px"><p>Add to cart</p></button>
             </form>
         </div>
     </div>

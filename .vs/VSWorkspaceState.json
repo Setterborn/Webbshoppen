@@ -2,15 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\Webbshoppen",
+    "\\WebbshoppenAPI",
+    "\\WebbshoppenAPI\\WebbshoppenAPI",
+    "\\WebbshoppenAPI\\WebbshoppenAPI\\Controllers",
+    "\\WebbshoppenAPI\\WebbshoppenAPI\\Data",
     "\\Webbshoppen\\Webbshoppen",
-    "\\Webbshoppen\\Webbshoppen\\Data",
-    "\\Webbshoppen\\Webbshoppen\\Models",
+    "\\Webbshoppen\\Webbshoppen\\Pages",
     "\\Webbshoppen\\Webbshoppen\\wwwroot",
-    "\\Webbshoppen\\Webbshoppen\\wwwroot\\css",
-    "\\Webbshoppen\\Webbshoppen\\wwwroot\\Image",
-    "\\Webbshoppen\\Webbshoppen\\wwwroot\\js",
-    "\\Webbshoppen\\Webbshoppen\\wwwroot\\lib"
+    "\\Webbshoppen\\Webbshoppen\\wwwroot\\Image"
   ],
-  "SelectedNode": "\\Webbshoppen\\Webbshoppen\\Pages\\ViewProduct.cshtml",
+  "SelectedNode": "\\WebbshoppenAPI\\WebbshoppenAPI\\Data\\ProductManager.cs",
   "PreviewInSolutionExplorer": false
 }

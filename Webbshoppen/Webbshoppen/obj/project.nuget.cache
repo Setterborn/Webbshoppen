@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "aZbY2o45cVCJe6CzbuKH3vqwZbRYnnC9SpNEOxKoj0juWQT+M+jc8YPq5O0KUpbKGbNKBLZec16n+rxQrBUI7A==",
+  "dgSpecHash": "nVS6u5LkvqgfZmsPjxQDT3005V7IyDDZeQoN58qN2K9xPaLxE88gOYSlqduMNoKjZdxg61aSBWVaSnEQ1EEucQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\sette\\Source\\Repos\\Setterborn\\Webbshoppen\\Webbshoppen\\Webbshoppen\\Webbshoppen.csproj",
+  "projectFilePath": "C:\\Users\\sette\\Desktop\\webbshoppen\\Webbshoppen\\Webbshoppen\\Webbshoppen\\Webbshoppen.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sette\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
   ],

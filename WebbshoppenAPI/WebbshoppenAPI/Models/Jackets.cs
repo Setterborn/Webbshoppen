@@ -26,5 +26,8 @@ namespace WebbshoppenAPI.Models
             JacketLenght = jacketLenght;
             ImageLink= imageLink;
         }
+        public Jackets()
+        {
+        }
     }
 }
