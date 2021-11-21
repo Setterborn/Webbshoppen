@@ -8,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+
 
 namespace Webbshoppen
 {
@@ -24,6 +26,12 @@ namespace Webbshoppen
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            // Sets the display of the Cookie Consent banner (/Pages/Shared/_CookieConsentPartial.cshtml).
+            // This lambda determines whether user consent for non-essential cookies is needed for a given request.
+            services.Configure<CookiePolicyOptions>(options => {
+                options.CheckConsentNeeded = context => true;
+                options.MinimumSameSitePolicy = SameSiteMode.Strict;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -42,7 +50,7 @@ namespace Webbshoppen
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseCookiePolicy();
             app.UseRouting();
 
             app.UseAuthorization();

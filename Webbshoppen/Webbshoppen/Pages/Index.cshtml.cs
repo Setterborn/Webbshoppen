@@ -20,6 +20,7 @@ namespace Webbshoppen.Pages
         public string ShopName { get; set; }
         public void OnGet(int index)
         {
+            ProductManager.GetRandomSalesProduct();
             ShopName = "Comfortable Clothing";
         }
        public IActionResult OnPost()
