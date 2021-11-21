@@ -704,209 +704,209 @@
     @if (Model.TheProduct is Models.Jackets)
     {
         <p>Size text:</p>
-        <input type="text" asp-for="@Model.Size" placeholder="Size" value="@(((Models.Jackets)Model.TheProduct).Size)" checked/>
+        <input type="text" asp-for="@Model.SizeStr" placeholder="Size" value="@(((Models.Jackets)Model.TheProduct).Size)" checked />
         <p>----------------------------------------------------</p>
     }
     @if (Model.TheProduct is Models.Pants)
     {
         <p>Size text:</p>
-        <input type="text" asp-for="@Model.Size" placeholder="Size" value="@(((Models.Pants)Model.TheProduct).Size)" checked/>
+        <input type="text" asp-for="@Model.Size" placeholder="Size" value="@(((Models.Pants)Model.TheProduct).Size)" checked />
         <p>----------------------------------------------------</p>
     }
     @if (Model.TheProduct is Models.Shirts)
     {
         <p>Size text:</p>
-        <input type="text" asp-for="@Model.Size" placeholder="Size" value="@(((Models.Shirts)Model.TheProduct).Size)" checked/>
+        <input type="text" asp-for="@Model.Size" placeholder="SizeStr" value="@(((Models.Shirts)Model.TheProduct).Size)" checked />
         <p>----------------------------------------------------</p>
     }
     @if (Model.TheProduct is Models.Shoes)
     {
         <p>Size text:</p>
-        <input type="text" asp-for="@Model.Size" placeholder="Size" value="@(((Models.Shoes)Model.TheProduct).Size)" checked/>
+        <input type="text" asp-for="@Model.Size" placeholder="Size" value="@(((Models.Shoes)Model.TheProduct).Size)" checked />
         <p>----------------------------------------------------</p>
     }
     @if (Model.TheProduct is Models.Underwear)
     {
         <p>Size text:</p>
-        <input type="text" asp-for="@Model.Size" placeholder="Size" value="@(((Models.Underwear)Model.TheProduct).Size)" checked/>
+        <input type="text" asp-for="@Model.Size" placeholder="SizeStr" value="@(((Models.Underwear)Model.TheProduct).Size)" checked />
         <p>----------------------------------------------------</p>
     }
     <p>Current color:</p>
     <div>
-        @foreach (var item in colorsArray)
-        {
-            if (Model.TheProduct.Colors.ToString() == item)
+            @foreach (var item in colorsArray)
             {
+                if (Model.TheProduct.Colors.ToString() == item)
+                {
 
-                <input type="radio" asp-for="@Model.Colors" id="current" name="Color" value="@Model.TheProduct.Colors" checked>
-                <label for="Current">@Model.TheProduct.Colors</label>
+                    <input type="radio" asp-for="@Model.Colors" id="current" name="Color" value="@Model.TheProduct.Colors">
+                    <label for="Current">@Model.TheProduct.Colors</label>
 
+                }
             }
-        }
+        </div>
+    <p>Change color:</p>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Black" name="Color" value="@Models.Colors.Black">
+        <label for="Black">Black</label>
     </div>
-        <p>Change color:</p>
-        <div>
-            <input type="radio" asp-for="@Model.Colors" id="Black" name="Color" value="@Models.Colors.Black">
-            <label for="Black">Black</label>
-        </div>
-        <div>
-            <input type="radio" asp-for="@Model.Colors" id="Red" name="Color" value="@Models.Colors.Red">
-            <label for="Red">Red</label>
-        </div>
-        <div>
-            <input type="radio" asp-for="@Model.Colors" id="Yellow" name="Color" value="@Models.Colors.Yellow">
-            <label for="Yellow">Yellow</label>
-        </div>
-        <div>
-            <input type="radio" asp-for="@Model.Colors" id="Blue" name="Color" value="@Models.Colors.Blue">
-            <label for="Blue">Blue</label>
-        </div>
-        <div>
-            <input type="radio" asp-for="@Model.Colors" id="Brown" name="Color" value="@Models.Colors.Brown">
-            <label for="Brown">Brown</label>
-        </div>
-        <div>
-            <input type="radio" asp-for="@Model.Colors" id="Green" name="Color" value="@Models.Colors.Green">
-            <label for="Green">Green</label>
-        </div>
-        <div>
-            <input type="radio" asp-for="@Model.Colors" id="DarkBlue" name="Color" value="@Models.Colors.DarkBlue">
-            <label for="DarkBlue">DarkBlue</label>
-        </div>
-        <div>
-            <input type="radio" asp-for="@Model.Colors" id="White" name="Color" value="@Models.Colors.White">
-            <label for="White">White</label>
-        </div>
-        <div>
-            <input type="radio" asp-for="@Model.Colors" id="Greyblue" name="Color" value="@Models.Colors.Greyblue">
-            <label for="Greyblue">Greyblue</label>
-        </div>
-        <div>
-            <input type="radio" asp-for="@Model.Colors" id="Lightblue" name="Color" value="@Models.Colors.Lightblue">
-            <label for="Lightblue">Lightblue</label>
-        </div>
-        <div>
-            <input type="radio" asp-for="@Model.Colors" id="PrintedColor" name="Color" value="@Models.Colors.PrintedColor">
-            <label for="PrintedColor">PrintedColor</label>
-        </div>
-        <div>
-            <input type="radio" asp-for="@Model.Colors" id="MixedColor" name="Color" value="@Models.Colors.MixedColor">
-            <label for="MixedColor">MixedColor</label>
-        </div>
-        <div>
-            <input type="radio" asp-for="@Model.Colors" id="Grey" name="Color" value="@Models.Colors.Grey">
-            <label for="Grey">Grey</label>
-        </div>
-        <div>
-            <input type="radio" asp-for="@Model.Colors" id="Pink" name="Color" value="@Models.Colors.Pink">
-            <label for="Pink">Pink</label>
-        </div>
-        <div>
-            <input type="radio" asp-for="@Model.Colors" id="Orange" name="Color" value="@Models.Colors.Orange">
-            <label for="Orange">Orange</label>
-        </div>
-        <div>
-            <input type="radio" asp-for="@Model.Colors" id="Purple" name="Color" value="@Models.Colors.Purple">
-            <label for="Purple">Purple</label>
-        </div>
-        <div>
-            <input type="radio" asp-for="@Model.Colors" id="LightBrown" name="Color" value="@Models.Colors.LightBrown">
-            <label for="LightBrown">LightBrown</label>
-        </div>
-
-        <p>----------------------------------------------------</p>
-        <p>Current gender:</p>
-        @foreach (var item in genderArray)
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Red" name="Color" value="@Models.Colors.Red">
+        <label for="Red">Red</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Yellow" name="Color" value="@Models.Colors.Yellow">
+        <label for="Yellow">Yellow</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Blue" name="Color" value="@Models.Colors.Blue">
+        <label for="Blue">Blue</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Brown" name="Color" value="@Models.Colors.Brown">
+        <label for="Brown">Brown</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Green" name="Color" value="@Models.Colors.Green">
+        <label for="Green">Green</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="DarkBlue" name="Color" value="@Models.Colors.DarkBlue">
+        <label for="DarkBlue">DarkBlue</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="White" name="Color" value="@Models.Colors.White">
+        <label for="White">White</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Greyblue" name="Color" value="@Models.Colors.Greyblue">
+        <label for="Greyblue">Greyblue</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Lightblue" name="Color" value="@Models.Colors.Lightblue">
+        <label for="Lightblue">Lightblue</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="PrintedColor" name="Color" value="@Models.Colors.PrintedColor">
+        <label for="PrintedColor">PrintedColor</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="MixedColor" name="Color" value="@Models.Colors.MixedColor">
+        <label for="MixedColor">MixedColor</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Grey" name="Color" value="@Models.Colors.Grey">
+        <label for="Grey">Grey</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Pink" name="Color" value="@Models.Colors.Pink">
+        <label for="Pink">Pink</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Orange" name="Color" value="@Models.Colors.Orange">
+        <label for="Orange">Orange</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="Purple" name="Color" value="@Models.Colors.Purple">
+        <label for="Purple">Purple</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Colors" id="LightBrown" name="Color" value="@Models.Colors.LightBrown">
+        <label for="LightBrown">LightBrown</label>
+    </div>
+    
+    <p>----------------------------------------------------</p>
+    <p>Current gender:</p>
+    @foreach (var item in genderArray)
+    {
+        if (Model.TheProduct.Gender.ToString() == item)
         {
-            if (Model.TheProduct.Gender.ToString() == item)
+            <div>
+                <input type="radio" asp-for="@Model.Gender" id="current" name="Gender" value="@Model.TheProduct.Gender" checked>
+                <label for="current">@Model.TheProduct.Gender</label>
+            </div>
+        }
+    }
+    <p>Change gender:</p>
+    <div>
+        <input type="radio" asp-for="@Model.Gender" id="Male" name="Gender" value="@Models.Gender.Male">
+        <label for="Male">Male</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Gender" id="Female" name="Gender" value="@Models.Gender.Female">
+        <label for="Female">Female</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.Gender" id="Unisex" name="Gender" value="@Models.Gender.Unisex">
+        <label for="Unisex">Unisex</label>
+    </div>
+    <p>----------------------------------------------------</p>
+    <p>Price:</p>
+    <input type="text" asp-for="@Model.Price" placeholder="Price" value="@Model.TheProduct.Price" checked />
+    <p>----------------------------------------------------</p>
+    <p>Description:</p>
+    <input type="text" asp-for="@Model.Description" placeholder="Description" value="@Model.TheProduct.Description" checked />
+    <p>----------------------------------------------------</p>
+    <p>Stock: </p>
+    <input type="number" asp-for="@Model.Stock" placeholder="Stock" value="@Model.TheProduct.Stock" checked />
+    @if (Model.TheProduct is Models.Jackets)
+    {
+        <p>----------------------------------------------------</p>
+        <p>Current jacket lenght:</p>
+        @foreach (var item in jacketsLenghtArray)
+        {
+            if (((((Models.Jackets)Model.TheProduct).JacketLenght).ToString()) == item)
             {
                 <div>
-                    <input type="radio" asp-for="@Model.Gender" id="current" name="Gender" value="@Model.TheProduct.Gender" checked>
-                    <label for="current">@Model.TheProduct.Gender</label>
+                    <input type="radio" asp-for="@Model.JacketLenght" id="current" name="JacketLenght" value="@(((Models.Jackets)Model.TheProduct).JacketLenght)" checked>
+                    <label for="current">@(((Models.Jackets)Model.TheProduct).JacketLenght)</label>
                 </div>
             }
         }
-        <p>Change gender:</p>
+        <p>Change jacket lenght:</p>
         <div>
-            <input type="radio" asp-for="@Model.Gender" id="Male" name="Gender" value="@Models.Gender.Male">
-            <label for="Male">Male</label>
+            <input type="radio" asp-for="@Model.JacketLenght" id="Long" name="JacketLenght" value="@Models.JacketLenght.Long">
+            <label for="Long">Long</label>
         </div>
         <div>
-            <input type="radio" asp-for="@Model.Gender" id="Female" name="Gender" value="@Models.Gender.Female">
-            <label for="Female">Female</label>
+            <input type="radio" asp-for="@Model.JacketLenght" id="Short" name="JacketLenght" value="@Models.JacketLenght.Short">
+            <label for="Short">Short</label>
         </div>
         <div>
-            <input type="radio" asp-for="@Model.Gender" id="Unisex" name="Gender" value="@Models.Gender.Unisex">
-            <label for="Unisex">Unisex</label>
+            <input type="radio" asp-for="@Model.JacketLenght" id="Medium" name="JacketLenght" value="@Models.JacketLenght.Medium">
+            <label for="Medium">Medium</label>
         </div>
+    }
+    @if (Model.TheProduct is Models.Underwear)
+    {
         <p>----------------------------------------------------</p>
-        <p>Price:</p>
-        <input type="text" asp-for="@Model.Price" placeholder="Price" value="@Model.TheProduct.Price" checked/>
-        <p>----------------------------------------------------</p>
-        <p>Description:</p>
-        <input type="text" asp-for="@Model.Description" placeholder="Description" value="@Model.TheProduct.Description" checked />
-        <p>----------------------------------------------------</p>
-        <p>Stock: </p>
-        <input type="number" asp-for="@Model.Stock" placeholder="Stock" value="@Model.TheProduct.Stock" checked/>
-        @if (Model.TheProduct is Models.Jackets)
+        <p>Current sexyness:</p>
+        @foreach (var item in jacketsLenghtArray)
         {
-            <p>----------------------------------------------------</p>
-            <p>Current jacket lenght:</p>
-            @foreach (var item in jacketsLenghtArray)
+            if (((((Models.Underwear)Model.TheProduct).UnderwearSexyness).ToString()) == item)
             {
-                if (((((Models.Jackets)Model.TheProduct).JacketLenght).ToString()) == item)
-                {
-                    <div>
-                        <input type="radio" asp-for="@Model.JacketLenght" id="current" name="JacketLenght" value="@(((Models.Jackets)Model.TheProduct).JacketLenght)" checked>
-                        <label for="current">@(((Models.Jackets)Model.TheProduct).JacketLenght)</label>
-                    </div>
-                }
+                <div>
+                    <input type="radio" asp-for="@Model.UnderwearSexyness" id="current" name="UnderwearSexyness" value="@(((Models.Underwear)Model.TheProduct).UnderwearSexyness)" checked>
+                    <label for="current">@(((Models.Underwear)Model.TheProduct).UnderwearSexyness))</label>
+                </div>
             }
-            <p>Change jacket lenght:</p>
-            <div>
-                <input type="radio" asp-for="@Model.JacketLenght" id="Long" name="JacketLenght" value="@Models.JacketLenght.Long">
-                <label for="Long">Long</label>
-            </div>
-            <div>
-                <input type="radio" asp-for="@Model.JacketLenght" id="Short" name="JacketLenght" value="@Models.JacketLenght.Short">
-                <label for="Short">Short</label>
-            </div>
-            <div>
-                <input type="radio" asp-for="@Model.JacketLenght" id="Medium" name="JacketLenght" value="@Models.JacketLenght.Medium">
-                <label for="Medium">Medium</label>
-            </div>
         }
-        @if (Model.TheProduct is Models.Underwear)
-        {
-            <p>----------------------------------------------------</p>
-            <p>Current sexyness:</p>
-            @foreach (var item in jacketsLenghtArray)
-            {
-                if (((((Models.Underwear)Model.TheProduct).UnderwearSexyness).ToString()) == item)
-                {
-                    <div>
-                        <input type="radio" asp-for="@Model.UnderwearSexyness" id="current" name="UnderwearSexyness" value="@(((Models.Underwear)Model.TheProduct).UnderwearSexyness)" checked>
-                        <label for="current">@(((Models.Underwear)Model.TheProduct).UnderwearSexyness))</label>
-                    </div>
-                }
-            }
-            <p>Change sexyness:</p>
-            <div>
-                <input type="radio" asp-for="@Model.UnderwearSexyness" id="Sexy" name="UnderwearSexyness" value="@Models.UnderwearSexyness.Sexy">
-                <label for="Sexy">Sexy</label>
-            </div>
-            <div>
-                <input type="radio" asp-for="@Model.JacketLenght" id="NotSexy" name="UnderwearSexyness" value="@Models.UnderwearSexyness.NotSexy">
-                <label for="NotSexy">NotSexy</label>
-            </div>
-        }
-        <p>----------------------------------------------------</p>
-        <p>ImageLink:  The image need to be put in the wwwroot/Images folder and linked from there</p>
-        <input type="text" asp-for="@Model.ImageLink" placeholder="ImageLink" value="@Model.TheProduct.ImageLink" checked />
-        <p>----------------------------------------------------</p>
-        <input type="hidden" name="input" value="107" placeholder="SubmitEdit" />
-        <button type="submit" class="btn btn-primary" style="height:40px"><p>Edit</p></button>
-    </form>
+        <p>Change sexyness:</p>
+        <div>
+            <input type="radio" asp-for="@Model.UnderwearSexyness" id="Sexy" name="UnderwearSexyness" value="@Models.UnderwearSexyness.Sexy">
+            <label for="Sexy">Sexy</label>
+        </div>
+        <div>
+            <input type="radio" asp-for="@Model.JacketLenght" id="NotSexy" name="UnderwearSexyness" value="@Models.UnderwearSexyness.NotSexy">
+            <label for="NotSexy">NotSexy</label>
+        </div>
+    }
+    <p>----------------------------------------------------</p>
+    <p>ImageLink:  The image need to be put in the wwwroot/Images folder and linked from there</p>
+    <input type="text" asp-for="@Model.ImageLink" placeholder="ImageLink" value="@Model.TheProduct.ImageLink" checked />
+    <p>----------------------------------------------------</p>
+    <input type="hidden" name="input" value="107" placeholder="SubmitEdit" />
+    <button type="submit" class="btn btn-primary" style="height:40px"><p>Edit</p></button>
+</form>
         break;
     case 13:
         <h1>Products added</h1>

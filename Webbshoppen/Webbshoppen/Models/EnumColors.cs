@@ -23,7 +23,7 @@ namespace Webbshoppen.Models
         Pink,
         Orange,
         Purple,
-        LightBrown,
+        LightBrown
     }
     
 }

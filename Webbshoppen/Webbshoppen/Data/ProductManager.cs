@@ -149,6 +149,7 @@ namespace Webbshoppen.Data
             Uri += productId.ToString();
             response = httpClient.DeleteAsync(Uri).GetAwaiter().GetResult();
             if (response.IsSuccessStatusCode) { AddProductResponse = "Success"; }
+            ProductList = GetProductList();
         }
         //Hämtar test produktlista från API
         public static List<Product> GetTestProductList()
@@ -171,7 +172,6 @@ namespace Webbshoppen.Data
             var apiResponse = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
             apiResponse = apiResponse.Replace("WebbshoppenAPI", "Webbshoppen");//Ersätter WebbshoppAPI med webbshopp för att få rätt typ
             var ProductList = JsonConvert.DeserializeObject<List<Product>>(apiResponse, settings);
-            UpdateProductId(ProductList);
             return ProductList;
         }
         //Lägger till 3 random produkter i realistan

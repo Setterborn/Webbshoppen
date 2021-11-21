@@ -125,14 +125,15 @@ namespace WebbshoppenAPI.Controllers
             ProductManager.WriteToFile(ProductManager.Products);
             return Ok();
         }
-        //[Route("/deleteproduct")]
-        //[HttpDelete("{id}")]
-        //public IActionResult DeleteProduct(int id)
-        //{
-        //    ProductManager.Products.RemoveAt(id);
-        //    ProductManager.WriteToFile(ProductManager.Products);
-        //    return Ok();
-        //}
+
+        [Route("/deleteproduct/{id}")]
+        [HttpDelete]
+        public IActionResult DeleteProduct([FromRoute] int id)
+        {
+            var p = ProductManager.Products.RemoveAll(p => p.ProductId == id);
+            ProductManager.WriteToFile(ProductManager.Products);
+            return Ok();
+        }
 
     }
 }

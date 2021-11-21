@@ -119,14 +119,35 @@ namespace Webbshoppen.Pages
             //Ändra en produkt
             else if (input == 107)
             {
-                    ProductManager.ProductList.RemoveAll(p => p.ProductId == ProductManager.TempProductId);
-                    if (ProductManager.TempProduct is Jackets) { ProductManager.ProductList.Add(new Jackets(ProductManager.TempProductId, SizeStr, Colors, Gender, Name, Price, Description, Stock, JacketLenght, ImageLink)); }
-                    if (ProductManager.TempProduct is Pants) { ProductManager.ProductList.Add(new Pants(ProductManager.TempProductId, Size, Colors, Gender, Name, Price, Description, Stock, ImageLink)); }
-                    if (ProductManager.TempProduct is Shirts) { ProductManager.ProductList.Add(new Shirts(ProductManager.TempProductId, SizeStr, Colors, Gender, Name, Price, Description, Stock, ImageLink)); }
-                    if (ProductManager.TempProduct is Shoes) { ProductManager.ProductList.Add(new Shoes(ProductManager.TempProductId, Size, Colors, Gender, Name, Price, Description, Stock, ImageLink)); }
-                    if (ProductManager.TempProduct is Underwear) { ProductManager.ProductList.Add(new Underwear(ProductManager.TempProductId, SizeStr, Colors, Gender, Name, Price, Description, Stock, UnderwearSexyness, ImageLink)); }
+                    if (ProductManager.TempProduct is Jackets) 
+                    { 
+                        Jackets jacket = new Jackets(ProductManager.TempProductId, SizeStr, Colors, Gender, Name, Price, Description, Stock, JacketLenght, ImageLink);
+                        ProductManager.PutProduct(jacket);
+                    }
+                    if (ProductManager.TempProduct is Pants) 
+                    { 
+                        Pants pants = new Pants(ProductManager.TempProductId, Size, Colors, Gender, Name, Price, Description, Stock, ImageLink);
+                        ProductManager.PutProduct(pants);
+                    }
+                    if (ProductManager.TempProduct is Shirts) 
+                    { 
+                        Shirts shirts = new Shirts(ProductManager.TempProductId, SizeStr, Colors, Gender, Name, Price, Description, Stock, ImageLink);
+                        ProductManager.PutProduct(shirts);
+                    }
+                    if (ProductManager.TempProduct is Shoes) 
+                    {
+                        Shoes shoes = new Shoes(ProductManager.TempProductId, Size, Colors, Gender, Name, Price, Description, Stock, ImageLink);
+                        ProductManager.PutProduct(shoes);
+                    }
+                    if (ProductManager.TempProduct is Underwear) 
+                    { 
+                        Underwear underwear = new Underwear(ProductManager.TempProductId, SizeStr, Colors, Gender, Name, Price, Description, Stock, UnderwearSexyness, ImageLink);
+                        ProductManager.PutProduct(underwear);
+                    }
                     if (ProductManager.TempProductId < ProductManager.ProductList.Count) { CState = 105; }
+                        
                     else { CState = 106; }
+                ProductManager.ProductList = ProductManager.GetProductList();
             }
             //Lägg till reaprodukt
             if (input == 108) { ProductManager.AddSalesProduct(ProductId); ProductManager.UpdateSalesList(); CState = 107; }
