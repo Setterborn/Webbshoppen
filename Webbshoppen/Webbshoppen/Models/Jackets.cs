@@ -23,6 +23,7 @@ namespace Webbshoppen.Models
             JacketLenght = jacketLenght;
             ImageLink= imageLink;
         }
+        //Metod för att skapa Deepcopy av object
         public static Jackets Clone(Jackets input)
         {
             var temp = new Jackets

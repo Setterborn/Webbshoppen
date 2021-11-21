@@ -23,6 +23,7 @@ namespace Webbshoppen.Models
             UnderwearSexyness = underwearSexyness;
             ImageLink = imageLink;
         }
+        //Metod för att skapa Deepcopy av object
         public static Underwear Clone(Underwear input)
         {
             var temp = new Underwear

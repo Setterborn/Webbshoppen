@@ -6,48 +6,42 @@
 <div>
     @if (Data.ProductManager.SortedList.Count < 1)
     {<p>No result</p>}
-    @foreach (Models.Product prod in Data.ProductManager.SortedList)
-    {
-        <div class="card mb-3" style="width: 70rem;">
-            <div class="row g-0">
-                <div class="col-md-4">
-                    <img src="@prod.ImageLink" class="img-fluid rounded-start" style="height:350px;max-width:350px" alt="...">
-                </div>
-                <div class="col-md-3">
+        <div class="row">
+            @foreach (Models.Product prod1 in Data.ProductManager.SortedList)
+            {
+                <div class="card" style="width: 18rem; padding-bottom:20px; padding-right:20px">
+                    <img src="@prod1.ImageLink" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h3><a asp-page="/ViewProduct" asp-route-productId="@prod.ProductId">@prod.Name</a></h3>
-                        <h5 class="card-text">@(Math.Round(prod.Price*1.25)) :- </h5>
-                        <p class="card-text">In stock: @prod.Stock</p>
-                        <p class="card-text">Gender: @prod.Gender</p>
-                        <p class="card-text">Color: @prod.Colors</p>
-                        <p class="card-text">Art nr: @prod.ProductId</p>
-                        @if (prod is Models.Jackets)
+                        <h3><a asp-page="/ViewProduct" asp-route-productId="@prod1.ProductId">@prod1.Name</a></h3>
+                        <h5 class="card-text">@(Math.Round(prod1.Price*1.25)) :- </h5>
+                        <p class="card-text">In stock: @prod1.Stock</p>
+                        <p class="card-text">Gender: @prod1.Gender</p>
+                        <p class="card-text">Color: @prod1.Colors</p>
+                        <p class="card-text">Art nr: @prod1.ProductId</p>
+                        @if (prod1 is Models.Jackets)
                         {
-                            <p class="card-text">Size: @(((Models.Jackets)prod).Size)</p>
+                            <p class="card-text">Size: @(((Models.Jackets)prod1).Size)</p>
                         }
-                        @if (prod is Models.Pants)
+                        @if (prod1 is Models.Pants)
                         {
-                            <p class="card-text">Size: @(((Models.Pants)prod).Size)</p>
+                            <p class="card-text">Size: @(((Models.Pants)prod1).Size)</p>
                         }
-                        @if (prod is Models.Shirts)
+                        @if (prod1 is Models.Shirts)
                         {
-                            <p class="card-text">Size: @(((Models.Shirts)prod).Size)</p>
+                            <p class="card-text">Size: @(((Models.Shirts)prod1).Size)</p>
                         }
-                        @if (prod is Models.Shoes)
+                        @if (prod1 is Models.Shoes)
                         {
-                            <p class="card-text">Size: @(((Models.Shoes)prod).Size)</p>
+                            <p class="card-text">Size: @(((Models.Shoes)prod1).Size)</p>
                         }
-                        @if (prod is Models.Underwear)
+                        @if (prod1 is Models.Underwear)
                         {
-                            <p class="card-text">Size: @(((Models.Underwear)prod).Size)</p>
+                            <p class="card-text">Size: @(((Models.Underwear)prod1).Size)</p>
                         }
                     </div>
                 </div>
-                <div class="col-md-5">
-                    <p>  </p>
-                    <p>@prod.Description</p>
-                </div>
-            </div>
+            }
         </div>
-    }
+        
+    
 </div>

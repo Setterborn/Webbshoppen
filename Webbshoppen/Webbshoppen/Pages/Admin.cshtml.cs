@@ -13,7 +13,6 @@ namespace Webbshoppen.Pages
     public class AdminModel : PageModel
     {
         public Product TheProduct { get; set; }
-        public string Type { get; set; }
         public int Discount { get; set; }
         public int CState { get; set; }
         public int ProductId { get; set; }
@@ -34,16 +33,26 @@ namespace Webbshoppen.Pages
         }
         public IActionResult OnPost(int input)
         {
+            //Sätter CState till input om input är mindre än 100
             if (input < 100) { CState = input; }
-            if (input == 12) { ProductManager.TempProductId = ProductId; TheProduct = ProductManager.ProductList[ProductManager.TempProductId];}
+            //Bestämmer vilken produkt vi vill ändra genom Edit
+            if (input == 12) { ProductManager.TempProductId = ProductId; TheProduct = ProductManager.ProductList[ProductManager.TempProductId];ProductManager.TempProduct = TheProduct; }
+            //Hämta random rea produkter
             if (input == 13) { ProductManager.GetRandomSalesProduct(); }
-            if (input == 14) { ProductManager.ProductList = ProductManager.GetProductList(); }
-            else if (input == 100) 
+            //Hämta test produkter från API
+            if (input == 14) { ProductManager.ProductList = ProductManager.GetTestProductList(); }
+            //Hämta produkter från API
+            if (input == 15) { ProductManager.ProductList = ProductManager.GetProductList(); }
+            //Lägga till nya produkter
+            else if (input == 100) //Skapar en jacket
             {
                 if (ModelState.IsValid) 
                 {
+                    //Skapa ny produkt
                     Product temp = new Jackets(ProductManager.ProductList.Count, SizeStr, Colors, Gender, Name, Price, Description, Stock, JacketLenght, ImageLink);
+                    //Lägga till ny produkt i listan
                     ProductManager.ProductList.Add(temp);
+                    //Skicka ny produkt till API
                     ProductManager.PostProduct(temp);
                     CState = 100; 
                 } else 
@@ -51,7 +60,7 @@ namespace Webbshoppen.Pages
                     CState = 101; 
                 } 
             }
-            else if (input == 101) 
+            else if (input == 101) //Skapar en Pants
             { 
                 if (ModelState.IsValid) 
                 {
@@ -64,7 +73,7 @@ namespace Webbshoppen.Pages
                     CState = 101;
                 } 
             }
-            else if (input == 102) 
+            else if (input == 102) // Skapar en Shirts
             { 
                 if (ModelState.IsValid) 
                 {
@@ -77,7 +86,7 @@ namespace Webbshoppen.Pages
                     CState = 101;
                 } 
             }
-            else if (input == 103) 
+            else if (input == 103) // Skapar en Shoes
             { 
                 if (ModelState.IsValid) 
                 {
@@ -90,7 +99,7 @@ namespace Webbshoppen.Pages
                     CState = 101;
                 }
             }
-            else if (input == 104) 
+            else if (input == 104) //Skapar en Underwear
             { 
                 if (ModelState.IsValid) 
                 {
@@ -103,24 +112,27 @@ namespace Webbshoppen.Pages
                     CState = 101; 
                 } 
             }
-            else if (input == 105) { if (ModelState.IsValid) { ProductManager.ProductList.RemoveAll(p => p.ProductId == ProductId); if (ProductId < ProductManager.ProductList.Count) { CState = 102; } else { CState = 103; } } }
+            //Tar bort produkt ur produktlistan efter produktid
+            else if (input == 105) { if (ModelState.IsValid) { ProductManager.DeleteProduct(ProductId); CState = 130; } }
+            //Ändrar och updaterar discount
             else if (input == 106) { ProductManager.Discount = Discount; ProductManager.UpdateSalesList(); CState = 104; }
+            //Ändra en produkt
             else if (input == 107)
             {
-                if (ModelState.IsValid)
-                {
                     ProductManager.ProductList.RemoveAll(p => p.ProductId == ProductManager.TempProductId);
-                    if (Type == "Jackets") { ProductManager.ProductList.Add(new Jackets(ProductManager.TempProductId, SizeStr, Colors, Gender, Name, Price, Description, Stock, JacketLenght, ImageLink)); }
-                    if (Type == "Pants") { ProductManager.ProductList.Add(new Pants(ProductManager.TempProductId, Size, Colors, Gender, Name, Price, Description, Stock, ImageLink)); }
-                    if (Type == "Shirts") { ProductManager.ProductList.Add(new Shirts(ProductManager.TempProductId, SizeStr, Colors, Gender, Name, Price, Description, Stock, ImageLink)); }
-                    if (Type == "Shoes") { ProductManager.ProductList.Add(new Shoes(ProductManager.TempProductId, Size, Colors, Gender, Name, Price, Description, Stock, ImageLink)); }
-                    if (Type == "Underwear") { ProductManager.ProductList.Add(new Underwear(ProductManager.TempProductId, SizeStr, Colors, Gender, Name, Price, Description, Stock, UnderwearSexyness, ImageLink)); }
+                    if (ProductManager.TempProduct is Jackets) { ProductManager.ProductList.Add(new Jackets(ProductManager.TempProductId, SizeStr, Colors, Gender, Name, Price, Description, Stock, JacketLenght, ImageLink)); }
+                    if (ProductManager.TempProduct is Pants) { ProductManager.ProductList.Add(new Pants(ProductManager.TempProductId, Size, Colors, Gender, Name, Price, Description, Stock, ImageLink)); }
+                    if (ProductManager.TempProduct is Shirts) { ProductManager.ProductList.Add(new Shirts(ProductManager.TempProductId, SizeStr, Colors, Gender, Name, Price, Description, Stock, ImageLink)); }
+                    if (ProductManager.TempProduct is Shoes) { ProductManager.ProductList.Add(new Shoes(ProductManager.TempProductId, Size, Colors, Gender, Name, Price, Description, Stock, ImageLink)); }
+                    if (ProductManager.TempProduct is Underwear) { ProductManager.ProductList.Add(new Underwear(ProductManager.TempProductId, SizeStr, Colors, Gender, Name, Price, Description, Stock, UnderwearSexyness, ImageLink)); }
                     if (ProductManager.TempProductId < ProductManager.ProductList.Count) { CState = 105; }
                     else { CState = 106; }
-                }
             }
+            //Lägg till reaprodukt
             if (input == 108) { ProductManager.AddSalesProduct(ProductId); ProductManager.UpdateSalesList(); CState = 107; }
+            //Ta bort produkt från realistan
             if (input == 109) { ProductManager.SalesList.RemoveAll(p => p.ProductId == ProductId); CState = 108; }
+            //Sorterar produktlistan
             ProductManager.OrderProductList();
             return Page();
         }

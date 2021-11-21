@@ -19,8 +19,11 @@ namespace Webbshoppen.Pages
         public int CState { get; set; }
         public double Total { get; set; }
         public int CCNumber { get; set; }
+        public int ShippingCost { get; set; }
+        public Models.Payment PaymentOption { get; set; }
         public void OnGet()
         {
+            //Summerar alla produkterna i varukorgen till totalpris
             foreach (Models.Product prod in Data.ProductManager.Cart)
             {
                 Total += prod.Price;
@@ -37,9 +40,17 @@ namespace Webbshoppen.Pages
                     break;
                 case 2:
                     if (ModelState.IsValid) { CState = input; } else { CState = 5; }
+                    if(ShippingOption==Models.Shipping.Express) { ShippingCost = 99; } else { ShippingCost = 59; }
                     break;
-                case 3:
-                    if (ModelState.IsValid) { if (CCNumber.ToString().Length > 9 && CCNumber.ToString().Length <11) { CState = input; Data.ProductManager.Cart.Clear(); } else { CState = 4; } } else { CState = 5; }
+                case 3://Kontrollerar kreditkortnummrets längd skall vara 10 siffror
+                    if (ModelState.IsValid) { if (CCNumber.ToString().Length > 9 && CCNumber.ToString().Length <11) { CState = input; Data.ProductManager.Cart=new(); } else { CState = 4; } } else { CState = 5; }
+                    break;
+                case 4:
+                    CState = 3;
+                    break;
+                case 10:
+                    if (ShippingOption == Models.Shipping.Express) { ShippingCost = 99; } else { ShippingCost = 59; }
+                    if(PaymentOption == Models.Payment.CreditCard) { CState = 2; }else { CState = 6; }
                     break;
             }
             return Page();

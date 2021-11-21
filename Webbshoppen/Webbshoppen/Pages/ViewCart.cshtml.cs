@@ -4,22 +4,24 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Newtonsoft.Json;
 
 namespace Webbshoppen.Pages
 {
+    [BindProperties(SupportsGet = true)]
     public class ViewCartModel : PageModel
     {
+        public int TempProductId { get; set; }
+        public IEnumerable<IGrouping<int, Models.Product>> CartList { get; set; }
         public void OnGet()
         {
-        }
-
-        public IActionResult OnPost(int input)
-        {
-            foreach (Models.Product prod in Data.ProductManager.Cart)
+            var cookieValue = Request.Cookies["MyCookie"];
+            if (cookieValue != null) 
             {
-                if(prod.ProductId == input) { Data.ProductManager.Cart.Remove(prod); break; } 
+                JsonSerializerSettings settings = new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.Auto };
+                Data.ProductManager.Cart = JsonConvert.DeserializeObject<List<Models.Product>>(cookieValue, settings); 
             }
-            return Page();
+            CartList = Data.ProductManager.Cart.GroupBy(p => p.ProductId);
         }
     }
 }

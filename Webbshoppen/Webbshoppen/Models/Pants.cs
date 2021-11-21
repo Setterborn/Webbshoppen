@@ -22,6 +22,7 @@ namespace Webbshoppen.Models
             Stock = stock;
             ImageLink = imageLink;
         }
+        //Metod för att skapa Deepcopy av object
         public static Pants Clone(Pants input)
         {
             var temp = new Pants

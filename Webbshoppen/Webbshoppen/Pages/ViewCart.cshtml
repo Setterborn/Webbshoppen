@@ -5,26 +5,28 @@
 }
 <h1>Shopping Cart</h1>
 <div>
+    @*Kontrollerar om det finns produkter i varukorgen och loopar sedan igenom varukorgen och skriver ut vad som finns i*@
     @if (Data.ProductManager.Cart.Count < 1) { <h1>The cart is empty</h1>}
-    @foreach (Models.Product prod in Data.ProductManager.Cart)
+    @foreach (IGrouping<int, Models.Product> prod in Model.CartList)
     {
     <div class="card mb-3" style="width: 70rem;">
         <div class="row g-0">
             <div class="col-md-4">
-                <img src="@prod.ImageLink" class="img-fluid rounded-start" alt="...">
+                <img src="@prod.FirstOrDefault().ImageLink" class="img-fluid rounded-start" alt="..." style="height:200px; width:150px">
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <h3><a asp-page="/ViewProduct" asp-route-productId="@prod.ProductId">@prod.Name</a></h3>
-                    <h5 class="card-text">@prod.Price :- </h5>
-                    <p class="card-text">In stock: @prod.Stock</p>
-                    <p class="card-text">Gender: @prod.Gender</p>
-                    <p class="card-text">Color: @prod.Colors</p>
-                    <p class="card-text">Art nr:@prod.ProductId</p>
-                    <form method="post">
-                        <input type="hidden" name="input" value="@prod.ProductId" placeholder="delete" />
-                        <button type="submit" class="btn btn-primary"><p>Delete</p></button>
-                    </form>
+                    <h3><a asp-page="/ViewProduct" asp-route-productId="@prod.First().ProductId">@prod.FirstOrDefault().Name</a></h3>
+                    <h5 class="card-text">@Math.Round(prod.FirstOrDefault().Price * 1.25) :- </h5>
+                    <h5 class="card-text">@prod.Count() x </h5>
+                    <div class="row">
+                        @if (prod.FirstOrDefault().Stock > 0)
+                        {
+                            <h3><a type="button" class="btn btn-outline-dark" asp-page="/AddProduct" asp-route-input="@prod.FirstOrDefault().ProductId">+</a></h3>
+                        }
+                        <h3><a type="button" class="btn btn-outline-dark" asp-page="/DeleteProduct" asp-route-input="@prod.FirstOrDefault().ProductId">-</a></h3>
+
+                    </div>
                 </div>
             </div>
         </div>

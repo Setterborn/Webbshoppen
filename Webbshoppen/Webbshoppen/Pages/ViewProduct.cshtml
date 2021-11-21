@@ -38,10 +38,18 @@
             <p>__________________________________________________________________________________________________________________</p>
             <p class="card-text">@Model.TheProduct.Description</p>
             <p>__________________________________________________________________________________________________________________</p>
-            <form method="post">
-                <input type="number" name="input" value="number" placeholder="pcs" />
-                <button type="submit" class="btn btn-primary" style="height:40px"><p>Add to cart</p></button>
-            </form>
+            @if (Model.TheProduct.Stock > 0)
+            {
+                <form method="post">
+                    <input type="number" name="input" value="number" placeholder="pcs" />
+                    <button type="submit" class="btn btn-primary" style="height:40px"><p>Add to cart</p></button>
+                </form>
+            }
+            else
+            {
+                <h3>Sold out</h3>
+            }
+
         </div>
     </div>
 </div>

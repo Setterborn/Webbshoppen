@@ -7,7 +7,6 @@
     case 0:
         <div>
             <div class="row">
-
             </div>
             <div class="row">
                 <div class="col">
@@ -30,7 +29,7 @@
                 </div>
             </div>
             <div class="row">
-                <p>Total ex moms: @Model.Total sek   Total ink. 25% moms: @(Model.Total*1.25) sek</p>
+                <p>Total ex VAT: @Math.Round(Model.Total) sek   Total ink. 25% VAT: @Math.Round(Model.Total*1.25) sek</p>
             </div>
             <div class="row">
                 <form method="post">
@@ -43,45 +42,51 @@
     case 1:
 <form method="post">
     <p>First name:</p>
-    <input type="text" asp-for="@Model.FirstName" placeholder="FirstName" />
+    <input type="text" asp-for="@Model.FirstName" placeholder="FirstName" required>
     <p>----------------------------------------------------</p>
     <p>Second name:</p>
-    <input type="text" asp-for="@Model.SecondName" placeholder="LastName" />
+    <input type="text" asp-for="@Model.SecondName" placeholder="LastName" required>
     <p>----------------------------------------------------</p>
     <p>Street name:</p>
-    <input type="text" asp-for="@Model.Street" placeholder="Street" />
+    <input type="text" asp-for="@Model.Street" placeholder="Street" required>
     <p>----------------------------------------------------</p>
     <p>Zip Code:</p>
-    <input type="number" asp-for="@Model.ZipCode" placeholder="Size" name="Zip Code" />
+    <input type="number" asp-for="@Model.ZipCode" placeholder="ZipCode" min="9999">
     <p>----------------------------------------------------</p>
     <p>City name:</p>
-    <input type="text" asp-for="@Model.City" placeholder="City" />
+    <input type="text" asp-for="@Model.City" placeholder="City" required>
     <p>----------------------------------------------------</p>
     <p>Shipping option:</p>
     <div>
-        <input type="radio" asp-for="@Model.ShippingOption" id="ShippingOption" name="ShippingOption" value="@Models.Shipping.Express">
-        <label for="ShippingOption">Express</label>
+        <input type="radio" asp-for="@Model.ShippingOption" id="ShippingOption" name="ShippingOption" value="@Models.Shipping.Express" required>
+        <label for="ShippingOption">Express + 99 sek</label>
     </div>
     <div>
-        <input type="radio" asp-for="@Model.ShippingOption" id="ShippingOption" name="ShippingOption" value="@Models.Shipping.Normal">
-        <label for="ShippingOption">Normal</label>
+        <input type="radio" asp-for="@Model.ShippingOption" id="ShippingOption" name="ShippingOption" value="@Models.Shipping.Normal" required>
+        <label for="ShippingOption">Normal + 59 sek</label>
     </div>
     <p>----------------------------------------------------</p>
-    <p>Payment options: </p>
-    <input type="hidden" name="input" value="2" placeholder="SubmitOrder" />
-    <button type="submit" class="btn btn-primary"><p>Creditcard</p></button>
+    <p>Payment option:</p>
+    <div>
+        <input type="radio" asp-for="@Model.PaymentOption" id="PaymentOption" name="PaymentOption" value="@Models.Payment.CreditCard" required>
+        <label for="PaymentOption">CreditCard</label>
+    </div>
+    <div>
+        <input type="radio" asp-for="@Model.PaymentOption" id="PaymentOption" name="PaymentOption" value="@Models.Payment.Invoice" required>
+        <label for="PaymentOption">Invoice</label>
+    </div>
     <p>----------------------------------------------------</p>
-    <input type="hidden" name="input" value="3" placeholder="SubmitOrder" />
-    <button type="submit" class="btn btn-primary"><p>Invoice</p></button>
+    <input type="hidden" name="input" value="10" placeholder="SubmitOrder"/>
+    <button type="submit" class="btn btn-primary"><p>Next</p></button>
 </form>
         break;
     case 2:
         <h1>Enter credit card number (10 digit)</h1>
-        <h5>Your card will be debited @(Data.ProductManager.TempTotal*1.25) sek</h5>
+        <h5>Your card will be debited @(Data.ProductManager.TempTotal*1.25) sek + @Model.ShippingCost sek for shipping. Total:@((Data.ProductManager.TempTotal*1.25)+Model.ShippingCost) </h5>
         <p>----------------------------------------------------</p>
         <form method="post">
             <p>Creditcard number:</p>
-            <input type="number" asp-for="@Model.CCNumber" placeholder="CCNumber" name="CCNumber" />
+            <input type="number" asp-for="@Model.CCNumber" placeholder="CCNumber" name="CCNumber" (required) />
             <input type="hidden" name="input" value="3" placeholder="SubmitPayment" />
             <button type="submit" class="btn btn-primary"><p>Pay</p></button>
         </form>
@@ -102,4 +107,12 @@
         <h1>Error, order not placed, please try again</h1>
         <meta http-equiv="refresh" content="1; URL=/Index" />
         break;
+    case 6:
+        <h5>Your will be billed @(Data.ProductManager.TempTotal*1.25) sek + @Model.ShippingCost sek for shipping. Total:@((Data.ProductManager.TempTotal*1.25)+Model.ShippingCost) </h5>
+        <form method="post">
+            <input type="hidden" name="input" value="4" placeholder="SubmitPayment" />
+            <button type="submit" class="btn btn-primary"><p>Place order</p></button>
+        </form>
+        break;
+
 }

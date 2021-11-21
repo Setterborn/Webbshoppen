@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Webbshoppen.Models;
 using Webbshoppen.Data;
+using Newtonsoft.Json;
+using Microsoft.AspNetCore.Http;
 
 namespace Webbshoppen.Pages
 {
@@ -20,16 +22,26 @@ namespace Webbshoppen.Pages
             ProductId = productId;
             TheProduct = ProductManager.ProductList[productId];
         }
+        //Tar emot antalet produkter som skall läggas till i varukorgen
         public IActionResult OnPost(int input)
         {
             if (ProductManager.ProductList[ProductId].Stock >= input)
             {
+                //Lägger till produkgter och minskar lagersaldot
                 for (int i = 0; i < input; i++)
                 {
                     ProductManager.Cart.Add(ProductManager.ProductList[ProductId]);
-                    ProductManager.ProductList[ProductId].Stock--;     
+                    ProductManager.ProductList[ProductId].Stock--;
                 }
             }
+            var cookieOptions = new CookieOptions
+            {
+                Expires = DateTime.Now.AddDays(30)
+            };
+            JsonSerializerSettings settings = new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.Auto };
+            var cartString = JsonConvert.SerializeObject(ProductManager.Cart, settings);
+            Response.Cookies.Append("MyCookie", cartString, cookieOptions);
+
             return RedirectToPage("/ViewCart");
         }
     }

@@ -7,10 +7,8 @@
     "\\WebbshoppenAPI\\WebbshoppenAPI\\Controllers",
     "\\WebbshoppenAPI\\WebbshoppenAPI\\Data",
     "\\Webbshoppen\\Webbshoppen",
-    "\\Webbshoppen\\Webbshoppen\\Pages",
-    "\\Webbshoppen\\Webbshoppen\\wwwroot",
-    "\\Webbshoppen\\Webbshoppen\\wwwroot\\Image"
+    "\\Webbshoppen\\Webbshoppen\\Pages"
   ],
-  "SelectedNode": "\\WebbshoppenAPI\\WebbshoppenAPI\\Data\\ProductManager.cs",
+  "SelectedNode": "\\WebbshoppenAPI\\WebbshoppenAPI\\Controllers\\ProductsController.cs",
   "PreviewInSolutionExplorer": false
 }
