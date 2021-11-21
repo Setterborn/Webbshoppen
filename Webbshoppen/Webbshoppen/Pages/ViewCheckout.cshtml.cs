@@ -2,8 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Newtonsoft.Json;
 
 namespace Webbshoppen.Pages
 {
@@ -33,6 +35,11 @@ namespace Webbshoppen.Pages
         }
         public IActionResult OnPost(int input)
         {
+            var cookieOptions = new CookieOptions
+            {
+                Expires = DateTime.Now.AddDays(30)
+            };
+            JsonSerializerSettings settings = new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.Auto };
             switch (input)
             {
                 case 1:
@@ -43,9 +50,14 @@ namespace Webbshoppen.Pages
                     if(ShippingOption==Models.Shipping.Express) { ShippingCost = 99; } else { ShippingCost = 59; }
                     break;
                 case 3://Kontrollerar kreditkortnummrets längd skall vara 10 siffror
-                    if (ModelState.IsValid) { if (CCNumber.ToString().Length > 9 && CCNumber.ToString().Length <11) { CState = input; Data.ProductManager.Cart=new(); } else { CState = 4; } } else { CState = 5; }
+                    if (ModelState.IsValid) { if (CCNumber.ToString().Length > 9 && CCNumber.ToString().Length <11) { CState = input; Data.ProductManager.Cart=new(); var cartString = JsonConvert.SerializeObject(Data.ProductManager.Cart, settings);
+                            Response.Cookies.Append("MyCookie", cartString, cookieOptions);
+                        } else { CState = 4; } } else { CState = 5; }
                     break;
                 case 4:
+                    Data.ProductManager.Cart = new();
+                    var cartString2 = JsonConvert.SerializeObject(Data.ProductManager.Cart, settings);
+                    Response.Cookies.Append("MyCookie", cartString2, cookieOptions);
                     CState = 3;
                     break;
                 case 10:
